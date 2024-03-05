@@ -1,0 +1,13 @@
+C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RestaurantManagementSystem\bin\Debug\RestaurantManagementSystem.exe.config
+C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RestaurantManagementSystem\bin\Debug\RestaurantManagementSystem.exe
+C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RestaurantManagementSystem\bin\Debug\RestaurantManagementSystem.pdb
+C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RestaurantManagementSystem\bin\Debug\RestaurantManagementSystem.xml
+C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RestaurantManagementSystem\obj\Debug\RestaurantManagementSystem.vbproj.AssemblyReference.cache
+C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RestaurantManagementSystem\obj\Debug\RestaurantManagementSystem.Form1.resources
+C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RestaurantManagementSystem\obj\Debug\RestaurantManagementSystem.Resources.resources
+C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RestaurantManagementSystem\obj\Debug\RestaurantManagementSystem.vbproj.GenerateResource.cache
+C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RestaurantManagementSystem\obj\Debug\RestaurantManagementSystem.vbproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RestaurantManagementSystem\obj\Debug\RestaurantManagementSystem.exe
+C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RestaurantManagementSystem\obj\Debug\RestaurantManagementSystem.xml
+C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RestaurantManagementSystem\obj\Debug\RestaurantManagementSystem.pdb
+C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RestaurantManagementSystem\obj\Debug\RestaurantManagementSystem.Dashboard.resources
