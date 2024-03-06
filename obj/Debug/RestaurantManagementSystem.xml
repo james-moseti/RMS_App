@@ -27,7 +27,27 @@ RestaurantManagementSystem
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:RestaurantManagementSystem.My.Resources.Resources.btnChampagne">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:RestaurantManagementSystem.My.Resources.Resources.btnChicken">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:RestaurantManagementSystem.My.Resources.Resources.btnClose">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:RestaurantManagementSystem.My.Resources.Resources.btnCoffee">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:RestaurantManagementSystem.My.Resources.Resources.btnCola">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -42,7 +62,22 @@ RestaurantManagementSystem
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:RestaurantManagementSystem.My.Resources.Resources.btnMate">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:RestaurantManagementSystem.My.Resources.Resources.btnMaximize">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:RestaurantManagementSystem.My.Resources.Resources.btnMilk">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:RestaurantManagementSystem.My.Resources.Resources.btnMilkShake">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -52,7 +87,22 @@ RestaurantManagementSystem
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:RestaurantManagementSystem.My.Resources.Resources.btnOtherFood">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:RestaurantManagementSystem.My.Resources.Resources.icons8_account_48">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:RestaurantManagementSystem.My.Resources.Resources.icons8_chicken_64">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:RestaurantManagementSystem.My.Resources.Resources.icons8_hamburger_94">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -62,7 +112,27 @@ RestaurantManagementSystem
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:RestaurantManagementSystem.My.Resources.Resources.icons8_noodles_94">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:RestaurantManagementSystem.My.Resources.Resources.icons8_password_48">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:RestaurantManagementSystem.My.Resources.Resources.icons8_pizza_80">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:RestaurantManagementSystem.My.Resources.Resources.icons8_pizza_96">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:RestaurantManagementSystem.My.Resources.Resources.icons8_rice_bowl_94">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

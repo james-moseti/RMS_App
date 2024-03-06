@@ -23,9 +23,6 @@ Partial Class Dashboard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pnlLeftSide = New System.Windows.Forms.Panel()
-        Me.picMaximize = New System.Windows.Forms.PictureBox()
-        Me.picMinimize = New System.Windows.Forms.PictureBox()
-        Me.picClose = New System.Windows.Forms.PictureBox()
         Me.weFoods = New System.Windows.Forms.Label()
         Me.logoPictureBox = New System.Windows.Forms.PictureBox()
         Me.btnAboutUs = New System.Windows.Forms.Button()
@@ -34,12 +31,67 @@ Partial Class Dashboard
         Me.pnlOnButtonPosition = New System.Windows.Forms.Panel()
         Me.btnFoods = New System.Windows.Forms.Button()
         Me.pnlTopSide = New System.Windows.Forms.Panel()
+        Me.picClose = New System.Windows.Forms.PictureBox()
+        Me.picMinimize = New System.Windows.Forms.PictureBox()
+        Me.picMaximize = New System.Windows.Forms.PictureBox()
+        Me.pnlDrinks = New System.Windows.Forms.Panel()
+        Me.pnlOther = New System.Windows.Forms.Panel()
+        Me.lblOther = New System.Windows.Forms.Label()
+        Me.btnOther = New System.Windows.Forms.Button()
+        Me.pnlMate = New System.Windows.Forms.Panel()
+        Me.lblMate = New System.Windows.Forms.Label()
+        Me.btnMate = New System.Windows.Forms.Button()
+        Me.pnlChampagne = New System.Windows.Forms.Panel()
+        Me.lblChampagne = New System.Windows.Forms.Label()
+        Me.btnChampagne = New System.Windows.Forms.Button()
+        Me.pnlMilk = New System.Windows.Forms.Panel()
+        Me.lblMilk = New System.Windows.Forms.Label()
+        Me.btnMilk = New System.Windows.Forms.Button()
+        Me.pnlCoffee = New System.Windows.Forms.Panel()
+        Me.lblCoffee = New System.Windows.Forms.Label()
+        Me.btnCoffee = New System.Windows.Forms.Button()
+        Me.pnlCola = New System.Windows.Forms.Panel()
+        Me.lblCola = New System.Windows.Forms.Label()
+        Me.btnCola = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.pnlFoods = New System.Windows.Forms.Panel()
         Me.pnlLeftSide.SuspendLayout()
-        CType(Me.picMaximize, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.logoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlTopSide.SuspendLayout()
+        CType(Me.picClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picMaximize, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlDrinks.SuspendLayout()
+        Me.pnlOther.SuspendLayout()
+        Me.pnlMate.SuspendLayout()
+        Me.pnlChampagne.SuspendLayout()
+        Me.pnlMilk.SuspendLayout()
+        Me.pnlCoffee.SuspendLayout()
+        Me.pnlCola.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        Me.Panel6.SuspendLayout()
+        Me.pnlFoods.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlLeftSide
@@ -57,36 +109,6 @@ Partial Class Dashboard
         Me.pnlLeftSide.Name = "pnlLeftSide"
         Me.pnlLeftSide.Size = New System.Drawing.Size(285, 582)
         Me.pnlLeftSide.TabIndex = 0
-        '
-        'picMaximize
-        '
-        Me.picMaximize.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.btnMaximize
-        Me.picMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.picMaximize.Location = New System.Drawing.Point(790, 3)
-        Me.picMaximize.Name = "picMaximize"
-        Me.picMaximize.Size = New System.Drawing.Size(20, 20)
-        Me.picMaximize.TabIndex = 10
-        Me.picMaximize.TabStop = False
-        '
-        'picMinimize
-        '
-        Me.picMinimize.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.btnMinimize
-        Me.picMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.picMinimize.Location = New System.Drawing.Point(764, 3)
-        Me.picMinimize.Name = "picMinimize"
-        Me.picMinimize.Size = New System.Drawing.Size(20, 20)
-        Me.picMinimize.TabIndex = 9
-        Me.picMinimize.TabStop = False
-        '
-        'picClose
-        '
-        Me.picClose.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.btnClose
-        Me.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.picClose.Location = New System.Drawing.Point(816, 3)
-        Me.picClose.Name = "picClose"
-        Me.picClose.Size = New System.Drawing.Size(20, 20)
-        Me.picClose.TabIndex = 2
-        Me.picClose.TabStop = False
         '
         'weFoods
         '
@@ -190,24 +212,492 @@ Partial Class Dashboard
         Me.pnlTopSide.Size = New System.Drawing.Size(848, 71)
         Me.pnlTopSide.TabIndex = 1
         '
+        'picClose
+        '
+        Me.picClose.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.btnClose
+        Me.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.picClose.Location = New System.Drawing.Point(816, 3)
+        Me.picClose.Name = "picClose"
+        Me.picClose.Size = New System.Drawing.Size(20, 20)
+        Me.picClose.TabIndex = 2
+        Me.picClose.TabStop = False
+        '
+        'picMinimize
+        '
+        Me.picMinimize.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.btnMinimize
+        Me.picMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.picMinimize.Location = New System.Drawing.Point(764, 3)
+        Me.picMinimize.Name = "picMinimize"
+        Me.picMinimize.Size = New System.Drawing.Size(20, 20)
+        Me.picMinimize.TabIndex = 9
+        Me.picMinimize.TabStop = False
+        '
+        'picMaximize
+        '
+        Me.picMaximize.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.btnMaximize
+        Me.picMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.picMaximize.Location = New System.Drawing.Point(790, 3)
+        Me.picMaximize.Name = "picMaximize"
+        Me.picMaximize.Size = New System.Drawing.Size(20, 20)
+        Me.picMaximize.TabIndex = 10
+        Me.picMaximize.TabStop = False
+        '
+        'pnlDrinks
+        '
+        Me.pnlDrinks.Controls.Add(Me.pnlOther)
+        Me.pnlDrinks.Controls.Add(Me.pnlMate)
+        Me.pnlDrinks.Controls.Add(Me.pnlChampagne)
+        Me.pnlDrinks.Controls.Add(Me.pnlMilk)
+        Me.pnlDrinks.Controls.Add(Me.pnlCoffee)
+        Me.pnlDrinks.Controls.Add(Me.pnlCola)
+        Me.pnlDrinks.Location = New System.Drawing.Point(288, 73)
+        Me.pnlDrinks.Name = "pnlDrinks"
+        Me.pnlDrinks.Size = New System.Drawing.Size(848, 515)
+        Me.pnlDrinks.TabIndex = 2
+        '
+        'pnlOther
+        '
+        Me.pnlOther.Controls.Add(Me.lblOther)
+        Me.pnlOther.Controls.Add(Me.btnOther)
+        Me.pnlOther.Location = New System.Drawing.Point(608, 281)
+        Me.pnlOther.Name = "pnlOther"
+        Me.pnlOther.Size = New System.Drawing.Size(175, 175)
+        Me.pnlOther.TabIndex = 5
+        '
+        'lblOther
+        '
+        Me.lblOther.AutoSize = True
+        Me.lblOther.Font = New System.Drawing.Font("FiraCode Nerd Font Mono", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOther.Location = New System.Drawing.Point(46, 10)
+        Me.lblOther.Name = "lblOther"
+        Me.lblOther.Size = New System.Drawing.Size(70, 24)
+        Me.lblOther.TabIndex = 1
+        Me.lblOther.Text = "Other"
+        '
+        'btnOther
+        '
+        Me.btnOther.BackColor = System.Drawing.Color.Gainsboro
+        Me.btnOther.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.btnMilkShake
+        Me.btnOther.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnOther.FlatAppearance.BorderSize = 0
+        Me.btnOther.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnOther.Location = New System.Drawing.Point(8, 40)
+        Me.btnOther.Name = "btnOther"
+        Me.btnOther.Size = New System.Drawing.Size(160, 124)
+        Me.btnOther.TabIndex = 0
+        Me.btnOther.UseVisualStyleBackColor = False
+        '
+        'pnlMate
+        '
+        Me.pnlMate.Controls.Add(Me.lblMate)
+        Me.pnlMate.Controls.Add(Me.btnMate)
+        Me.pnlMate.Location = New System.Drawing.Point(328, 281)
+        Me.pnlMate.Name = "pnlMate"
+        Me.pnlMate.Size = New System.Drawing.Size(175, 175)
+        Me.pnlMate.TabIndex = 4
+        '
+        'lblMate
+        '
+        Me.lblMate.AutoSize = True
+        Me.lblMate.Font = New System.Drawing.Font("FiraCode Nerd Font Mono", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMate.Location = New System.Drawing.Point(62, 10)
+        Me.lblMate.Name = "lblMate"
+        Me.lblMate.Size = New System.Drawing.Size(58, 24)
+        Me.lblMate.TabIndex = 1
+        Me.lblMate.Text = "Mate"
+        '
+        'btnMate
+        '
+        Me.btnMate.BackColor = System.Drawing.Color.Gainsboro
+        Me.btnMate.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.btnMate
+        Me.btnMate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnMate.FlatAppearance.BorderSize = 0
+        Me.btnMate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMate.Location = New System.Drawing.Point(8, 40)
+        Me.btnMate.Name = "btnMate"
+        Me.btnMate.Size = New System.Drawing.Size(160, 124)
+        Me.btnMate.TabIndex = 0
+        Me.btnMate.UseVisualStyleBackColor = False
+        '
+        'pnlChampagne
+        '
+        Me.pnlChampagne.Controls.Add(Me.lblChampagne)
+        Me.pnlChampagne.Controls.Add(Me.btnChampagne)
+        Me.pnlChampagne.Location = New System.Drawing.Point(48, 281)
+        Me.pnlChampagne.Name = "pnlChampagne"
+        Me.pnlChampagne.Size = New System.Drawing.Size(175, 175)
+        Me.pnlChampagne.TabIndex = 3
+        '
+        'lblChampagne
+        '
+        Me.lblChampagne.AutoSize = True
+        Me.lblChampagne.Font = New System.Drawing.Font("FiraCode Nerd Font Mono", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblChampagne.Location = New System.Drawing.Point(30, 10)
+        Me.lblChampagne.Name = "lblChampagne"
+        Me.lblChampagne.Size = New System.Drawing.Size(118, 24)
+        Me.lblChampagne.TabIndex = 1
+        Me.lblChampagne.Text = "Champagne"
+        '
+        'btnChampagne
+        '
+        Me.btnChampagne.BackColor = System.Drawing.Color.Gainsboro
+        Me.btnChampagne.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.btnChampagne
+        Me.btnChampagne.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnChampagne.FlatAppearance.BorderSize = 0
+        Me.btnChampagne.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnChampagne.Location = New System.Drawing.Point(8, 40)
+        Me.btnChampagne.Name = "btnChampagne"
+        Me.btnChampagne.Size = New System.Drawing.Size(160, 124)
+        Me.btnChampagne.TabIndex = 0
+        Me.btnChampagne.UseVisualStyleBackColor = False
+        '
+        'pnlMilk
+        '
+        Me.pnlMilk.Controls.Add(Me.lblMilk)
+        Me.pnlMilk.Controls.Add(Me.btnMilk)
+        Me.pnlMilk.Location = New System.Drawing.Point(608, 49)
+        Me.pnlMilk.Name = "pnlMilk"
+        Me.pnlMilk.Size = New System.Drawing.Size(175, 175)
+        Me.pnlMilk.TabIndex = 2
+        '
+        'lblMilk
+        '
+        Me.lblMilk.AutoSize = True
+        Me.lblMilk.Font = New System.Drawing.Font("FiraCode Nerd Font Mono", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMilk.Location = New System.Drawing.Point(61, 10)
+        Me.lblMilk.Name = "lblMilk"
+        Me.lblMilk.Size = New System.Drawing.Size(58, 24)
+        Me.lblMilk.TabIndex = 1
+        Me.lblMilk.Text = "Milk"
+        '
+        'btnMilk
+        '
+        Me.btnMilk.BackColor = System.Drawing.Color.Gainsboro
+        Me.btnMilk.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.btnMilk
+        Me.btnMilk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnMilk.FlatAppearance.BorderSize = 0
+        Me.btnMilk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMilk.Location = New System.Drawing.Point(8, 40)
+        Me.btnMilk.Name = "btnMilk"
+        Me.btnMilk.Size = New System.Drawing.Size(160, 124)
+        Me.btnMilk.TabIndex = 0
+        Me.btnMilk.UseVisualStyleBackColor = False
+        '
+        'pnlCoffee
+        '
+        Me.pnlCoffee.Controls.Add(Me.lblCoffee)
+        Me.pnlCoffee.Controls.Add(Me.btnCoffee)
+        Me.pnlCoffee.Location = New System.Drawing.Point(328, 49)
+        Me.pnlCoffee.Name = "pnlCoffee"
+        Me.pnlCoffee.Size = New System.Drawing.Size(175, 175)
+        Me.pnlCoffee.TabIndex = 1
+        '
+        'lblCoffee
+        '
+        Me.lblCoffee.AutoSize = True
+        Me.lblCoffee.Font = New System.Drawing.Font("FiraCode Nerd Font Mono", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCoffee.Location = New System.Drawing.Point(52, 10)
+        Me.lblCoffee.Name = "lblCoffee"
+        Me.lblCoffee.Size = New System.Drawing.Size(82, 24)
+        Me.lblCoffee.TabIndex = 1
+        Me.lblCoffee.Text = "Coffee"
+        '
+        'btnCoffee
+        '
+        Me.btnCoffee.BackColor = System.Drawing.Color.Gainsboro
+        Me.btnCoffee.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.btnCoffee
+        Me.btnCoffee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCoffee.FlatAppearance.BorderSize = 0
+        Me.btnCoffee.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCoffee.Location = New System.Drawing.Point(8, 40)
+        Me.btnCoffee.Name = "btnCoffee"
+        Me.btnCoffee.Size = New System.Drawing.Size(160, 124)
+        Me.btnCoffee.TabIndex = 0
+        Me.btnCoffee.UseVisualStyleBackColor = False
+        '
+        'pnlCola
+        '
+        Me.pnlCola.Controls.Add(Me.lblCola)
+        Me.pnlCola.Controls.Add(Me.btnCola)
+        Me.pnlCola.Location = New System.Drawing.Point(48, 49)
+        Me.pnlCola.Name = "pnlCola"
+        Me.pnlCola.Size = New System.Drawing.Size(175, 175)
+        Me.pnlCola.TabIndex = 0
+        '
+        'lblCola
+        '
+        Me.lblCola.AutoSize = True
+        Me.lblCola.Font = New System.Drawing.Font("FiraCode Nerd Font Mono", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCola.Location = New System.Drawing.Point(62, 10)
+        Me.lblCola.Name = "lblCola"
+        Me.lblCola.Size = New System.Drawing.Size(58, 24)
+        Me.lblCola.TabIndex = 1
+        Me.lblCola.Text = "Cola"
+        '
+        'btnCola
+        '
+        Me.btnCola.BackColor = System.Drawing.Color.Gainsboro
+        Me.btnCola.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.btnCola
+        Me.btnCola.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCola.FlatAppearance.BorderSize = 0
+        Me.btnCola.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCola.Location = New System.Drawing.Point(8, 40)
+        Me.btnCola.Name = "btnCola"
+        Me.btnCola.Size = New System.Drawing.Size(160, 124)
+        Me.btnCola.TabIndex = 0
+        Me.btnCola.UseVisualStyleBackColor = False
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Location = New System.Drawing.Point(608, 281)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(175, 175)
+        Me.Panel1.TabIndex = 5
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("FiraCode Nerd Font Mono", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(46, 10)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(70, 24)
+        Me.Label3.TabIndex = 1
+        Me.Label3.Text = "Other"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Gainsboro
+        Me.Button1.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.btnOtherFood
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(8, 40)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(160, 124)
+        Me.Button1.TabIndex = 0
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.Button2)
+        Me.Panel2.Location = New System.Drawing.Point(328, 281)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(175, 175)
+        Me.Panel2.TabIndex = 4
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("FiraCode Nerd Font Mono", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(31, 10)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(118, 24)
+        Me.Label4.TabIndex = 1
+        Me.Label4.Text = "Hamburger"
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.Gainsboro
+        Me.Button2.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.icons8_hamburger_94
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Location = New System.Drawing.Point(8, 40)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(160, 124)
+        Me.Button2.TabIndex = 0
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.Label5)
+        Me.Panel3.Controls.Add(Me.Button3)
+        Me.Panel3.Location = New System.Drawing.Point(48, 281)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(175, 175)
+        Me.Panel3.TabIndex = 3
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("FiraCode Nerd Font Mono", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(59, 10)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(58, 24)
+        Me.Label5.TabIndex = 1
+        Me.Label5.Text = "Rice"
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.Gainsboro
+        Me.Button3.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.icons8_rice_bowl_94
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Location = New System.Drawing.Point(8, 40)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(160, 124)
+        Me.Button3.TabIndex = 0
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.Label6)
+        Me.Panel4.Controls.Add(Me.Button4)
+        Me.Panel4.Location = New System.Drawing.Point(608, 49)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(175, 175)
+        Me.Panel4.TabIndex = 2
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("FiraCode Nerd Font Mono", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(53, 10)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(70, 24)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "Pizza"
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.Gainsboro
+        Me.Button4.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.icons8_pizza_96
+        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Location = New System.Drawing.Point(8, 40)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(160, 124)
+        Me.Button4.TabIndex = 0
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.Label7)
+        Me.Panel5.Controls.Add(Me.Button5)
+        Me.Panel5.Location = New System.Drawing.Point(328, 49)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(175, 175)
+        Me.Panel5.TabIndex = 1
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("FiraCode Nerd Font Mono", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(46, 10)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(94, 24)
+        Me.Label7.TabIndex = 1
+        Me.Label7.Text = "Noodles"
+        '
+        'Button5
+        '
+        Me.Button5.BackColor = System.Drawing.Color.Gainsboro
+        Me.Button5.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.icons8_noodles_94
+        Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button5.FlatAppearance.BorderSize = 0
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Location = New System.Drawing.Point(8, 40)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(160, 124)
+        Me.Button5.TabIndex = 0
+        Me.Button5.UseVisualStyleBackColor = False
+        '
+        'Panel6
+        '
+        Me.Panel6.Controls.Add(Me.Label8)
+        Me.Panel6.Controls.Add(Me.Button6)
+        Me.Panel6.Location = New System.Drawing.Point(48, 49)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(175, 175)
+        Me.Panel6.TabIndex = 0
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("FiraCode Nerd Font Mono", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(46, 10)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(94, 24)
+        Me.Label8.TabIndex = 1
+        Me.Label8.Text = "Chicken"
+        '
+        'Button6
+        '
+        Me.Button6.BackColor = System.Drawing.Color.Gainsboro
+        Me.Button6.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.btnChicken
+        Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button6.FlatAppearance.BorderSize = 0
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.Location = New System.Drawing.Point(8, 40)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(160, 124)
+        Me.Button6.TabIndex = 0
+        Me.Button6.UseVisualStyleBackColor = False
+        '
+        'pnlFoods
+        '
+        Me.pnlFoods.Controls.Add(Me.Panel1)
+        Me.pnlFoods.Controls.Add(Me.Panel2)
+        Me.pnlFoods.Controls.Add(Me.Panel3)
+        Me.pnlFoods.Controls.Add(Me.Panel4)
+        Me.pnlFoods.Controls.Add(Me.Panel5)
+        Me.pnlFoods.Controls.Add(Me.Panel6)
+        Me.pnlFoods.Location = New System.Drawing.Point(288, 73)
+        Me.pnlFoods.Name = "pnlFoods"
+        Me.pnlFoods.Size = New System.Drawing.Size(845, 509)
+        Me.pnlFoods.TabIndex = 6
+        '
         'Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1133, 582)
+        Me.Controls.Add(Me.pnlDrinks)
         Me.Controls.Add(Me.pnlTopSide)
         Me.Controls.Add(Me.pnlLeftSide)
+        Me.Controls.Add(Me.pnlFoods)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Dashboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Dashboard"
         Me.pnlLeftSide.ResumeLayout(False)
         Me.pnlLeftSide.PerformLayout()
-        CType(Me.picMaximize, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picMinimize, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picClose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.logoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlTopSide.ResumeLayout(False)
+        CType(Me.picClose, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picMinimize, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picMaximize, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlDrinks.ResumeLayout(False)
+        Me.pnlOther.ResumeLayout(False)
+        Me.pnlOther.PerformLayout()
+        Me.pnlMate.ResumeLayout(False)
+        Me.pnlMate.PerformLayout()
+        Me.pnlChampagne.ResumeLayout(False)
+        Me.pnlChampagne.PerformLayout()
+        Me.pnlMilk.ResumeLayout(False)
+        Me.pnlMilk.PerformLayout()
+        Me.pnlCoffee.ResumeLayout(False)
+        Me.pnlCoffee.PerformLayout()
+        Me.pnlCola.ResumeLayout(False)
+        Me.pnlCola.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
+        Me.pnlFoods.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -224,4 +714,42 @@ Partial Class Dashboard
     Friend WithEvents picClose As PictureBox
     Friend WithEvents picMaximize As PictureBox
     Friend WithEvents picMinimize As PictureBox
+    Friend WithEvents pnlDrinks As Panel
+    Friend WithEvents pnlCola As Panel
+    Friend WithEvents btnCola As Button
+    Friend WithEvents lblCola As Label
+    Friend WithEvents pnlMilk As Panel
+    Friend WithEvents lblMilk As Label
+    Friend WithEvents btnMilk As Button
+    Friend WithEvents pnlCoffee As Panel
+    Friend WithEvents lblCoffee As Label
+    Friend WithEvents btnCoffee As Button
+    Friend WithEvents pnlOther As Panel
+    Friend WithEvents lblOther As Label
+    Friend WithEvents btnOther As Button
+    Friend WithEvents pnlMate As Panel
+    Friend WithEvents lblMate As Label
+    Friend WithEvents btnMate As Button
+    Friend WithEvents pnlChampagne As Panel
+    Friend WithEvents lblChampagne As Label
+    Friend WithEvents btnChampagne As Button
+    Friend WithEvents pnlFoods As Panel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Button6 As Button
 End Class

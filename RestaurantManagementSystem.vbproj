@@ -161,5 +161,47 @@
   <ItemGroup>
     <None Include="Resources\btnMaximize.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-chicken-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-noodles-94.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pizza-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pizza-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-rice-bowl-94.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-hamburger-94.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnOtherFood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnChicken.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnCola.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnCoffee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMilk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnChampagne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMilkShake.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
