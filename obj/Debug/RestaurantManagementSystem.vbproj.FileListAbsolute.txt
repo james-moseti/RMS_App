@@ -11,3 +11,16 @@ C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RestaurantManageme
 C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RestaurantManagementSystem\obj\Debug\RestaurantManagementSystem.xml
 C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RestaurantManagementSystem\obj\Debug\RestaurantManagementSystem.pdb
 C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RestaurantManagementSystem\obj\Debug\RestaurantManagementSystem.Dashboard.resources
+C:\Users\Hp\Desktop\code\vb.net\New folder\bin\Debug\RestaurantManagementSystem.exe.config
+C:\Users\Hp\Desktop\code\vb.net\New folder\bin\Debug\RestaurantManagementSystem.exe
+C:\Users\Hp\Desktop\code\vb.net\New folder\bin\Debug\RestaurantManagementSystem.pdb
+C:\Users\Hp\Desktop\code\vb.net\New folder\bin\Debug\RestaurantManagementSystem.xml
+C:\Users\Hp\Desktop\code\vb.net\New folder\obj\Debug\RestaurantManagementSystem.vbproj.AssemblyReference.cache
+C:\Users\Hp\Desktop\code\vb.net\New folder\obj\Debug\RestaurantManagementSystem.Dashboard.resources
+C:\Users\Hp\Desktop\code\vb.net\New folder\obj\Debug\RestaurantManagementSystem.Form1.resources
+C:\Users\Hp\Desktop\code\vb.net\New folder\obj\Debug\RestaurantManagementSystem.Resources.resources
+C:\Users\Hp\Desktop\code\vb.net\New folder\obj\Debug\RestaurantManagementSystem.vbproj.GenerateResource.cache
+C:\Users\Hp\Desktop\code\vb.net\New folder\obj\Debug\RestaurantManagementSystem.vbproj.CoreCompileInputs.cache
+C:\Users\Hp\Desktop\code\vb.net\New folder\obj\Debug\RestaurantManagementSystem.exe
+C:\Users\Hp\Desktop\code\vb.net\New folder\obj\Debug\RestaurantManagementSystem.xml
+C:\Users\Hp\Desktop\code\vb.net\New folder\obj\Debug\RestaurantManagementSystem.pdb
