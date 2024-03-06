@@ -3,12 +3,20 @@
         logoPictureBox.BorderStyle = BorderStyle.None
     End Sub
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        pnlfood.Visible = True
+        pnldrinks.Visible = False
+        pnlcart.Visible = False
+        pnlabout.Visible = False
 
     End Sub
 
     Private Sub btnFoods_Click(sender As Object, e As EventArgs) Handles btnFoods.Click
-        pnlOnButtonPosition.Height = btnFoods.Height
-        pnlOnButtonPosition.Top = btnFoods.Top
+        pnlfood.Height = btnFoods.Height
+        pnlfood.Top = btnFoods.Top
+        pnlfood.Visible = True
+        pnldrinks.Visible = False
+        pnlcart.Visible = False
+        pnlabout.Visible = False
         'pnlFoods.Visible = True
         'pnlDrinks.Visible = False
         'pnlMyCart.Visible = False
@@ -16,8 +24,12 @@
     End Sub
 
     Private Sub btnDrinks_Click(sender As Object, e As EventArgs) Handles btnDrinks.Click
-        pnlOnButtonPosition.Height = btnDrinks.Height
-        pnlOnButtonPosition.Top = btnDrinks.Top
+        pnlfood.Height = btnDrinks.Height
+        pnlfood.Top = btnDrinks.Top
+        pnlfood.Visible = False
+        pnldrinks.Visible = True
+        pnlcart.Visible = False
+        pnlabout.Visible = False
         'pnlFoods.Visible = False
         'pnlDrinks.Visible = True
         'pnlMyCart.Visible = False
@@ -25,8 +37,12 @@
     End Sub
 
     Private Sub btnMyCart_Click(sender As Object, e As EventArgs) Handles btnMyCart.Click
-        pnlOnButtonPosition.Height = btnMyCart.Height
-        pnlOnButtonPosition.Top = btnMyCart.Top
+        pnlfood.Height = btnMyCart.Height
+        pnlfood.Top = btnMyCart.Top
+        pnlfood.Visible = False
+        pnldrinks.Visible = False
+        pnlcart.Visible = True
+        pnlabout.Visible = False
         'pnlFoods.Visible = False
         'pnlDrinks.Visible = False
         'pnlMyCart.Visible = True
@@ -34,8 +50,12 @@
     End Sub
 
     Private Sub btnAboutUs_Click(sender As Object, e As EventArgs) Handles btnAboutUs.Click
-        pnlOnButtonPosition.Height = btnAboutUs.Height
-        pnlOnButtonPosition.Top = btnAboutUs.Top
+        pnlfood.Height = btnAboutUs.Height
+        pnlfood.Top = btnAboutUs.Top
+        pnlfood.Visible = False
+        pnldrinks.Visible = False
+        pnlcart.Visible = False
+        pnlabout.Visible = True
         'pnlFoods.Visible = False
         'pnlDrinks.Visible = False
         'pnlMyCart.Visible = False
