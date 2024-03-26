@@ -3,47 +3,77 @@
         logoPictureBox.BorderStyle = BorderStyle.None
     End Sub
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub btnFoods_Click(sender As Object, e As EventArgs) Handles btnFoods.Click
-        pnlOnButtonPosition.Height = btnFoods.Height
-        pnlOnButtonPosition.Top = btnFoods.Top
         pnlFoods.Visible = True
         pnlDrinks.Visible = False
         'pnlMyCart.Visible = False
         'pnlAboutUs.Visible = False
+
+        'Orange panel to the left
+        pnlOnButtonFood.Visible = True
+        pnlOnButtonDrinks.Visible = False
+        pnlOnButtonCart.Visible = False
+        pnlOnButtonAbout.Visible = False
+
+    End Sub
+
+    Private Sub btnFoods_Click(sender As Object, e As EventArgs) Handles btnFoods.Click
+        pnlFoods.Visible = True
+        pnlDrinks.Visible = False
+        'pnlMyCart.Visible = False
+        'pnlAboutUs.Visible = False
+
+
+        'Orange panel to the left
+        pnlOnButtonFood.Visible = True
+        pnlOnButtonDrinks.Visible = False
+        pnlOnButtonCart.Visible = False
+        pnlOnButtonAbout.Visible = False
     End Sub
 
     Private Sub btnDrinks_Click(sender As Object, e As EventArgs) Handles btnDrinks.Click
-        pnlOnButtonPosition.Height = btnDrinks.Height
-        pnlOnButtonPosition.Top = btnDrinks.Top
         pnlFoods.Visible = False
         pnlDrinks.Visible = True
         'pnlMyCart.Visible = False
         'pnlAboutUs.Visible = False
+
+
+        'Orange panel to the left
+        pnlOnButtonFood.Visible = False
+        pnlOnButtonDrinks.Visible = True
+        pnlOnButtonCart.Visible = False
+        pnlOnButtonAbout.Visible = False
     End Sub
 
     Private Sub btnMyCart_Click(sender As Object, e As EventArgs) Handles btnMyCart.Click
-        pnlOnButtonPosition.Height = btnMyCart.Height
-        pnlOnButtonPosition.Top = btnMyCart.Top
         pnlFoods.Visible = False
         pnlDrinks.Visible = False
         'pnlMyCart.Visible = True
         'pnlAboutUs.Visible = False
+
+
+        'Orange panel to the left
+        pnlOnButtonFood.Visible = False
+        pnlOnButtonDrinks.Visible = False
+        pnlOnButtonCart.Visible = True
+        pnlOnButtonAbout.Visible = False
     End Sub
 
     Private Sub btnAboutUs_Click(sender As Object, e As EventArgs) Handles btnAboutUs.Click
-        pnlOnButtonPosition.Height = btnAboutUs.Height
-        pnlOnButtonPosition.Top = btnAboutUs.Top
         pnlFoods.Visible = False
         pnlDrinks.Visible = False
         'pnlMyCart.Visible = False
         'pnlAboutUs.Visible = True
+
+
+        'Orange panel to the left
+        pnlOnButtonFood.Visible = False
+        pnlOnButtonDrinks.Visible = False
+        pnlOnButtonCart.Visible = False
+        pnlOnButtonAbout.Visible = True
     End Sub
 
     Private Sub picClose_Click(sender As Object, e As EventArgs) Handles picClose.Click
-        Me.Close()
+        Application.Exit()
     End Sub
 
     Private Sub picMinimize_Click(sender As Object, e As EventArgs) Handles picMinimize.Click
