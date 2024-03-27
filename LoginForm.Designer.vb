@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -43,9 +43,10 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(197, 208)
+        Me.Label1.Location = New System.Drawing.Point(148, 169)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(77, 28)
+        Me.Label1.Size = New System.Drawing.Size(63, 21)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Sign In"
         '
@@ -54,9 +55,10 @@ Partial Class Form1
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.Controls.Add(Me.txtUsername)
         Me.Panel1.Controls.Add(Me.PictureBox2)
-        Me.Panel1.Location = New System.Drawing.Point(83, 259)
+        Me.Panel1.Location = New System.Drawing.Point(62, 211)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(335, 64)
+        Me.Panel1.Size = New System.Drawing.Size(251, 52)
         Me.Panel1.TabIndex = 2
         '
         'txtUsername
@@ -64,17 +66,19 @@ Partial Class Form1
         Me.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtUsername.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.ForeColor = System.Drawing.Color.Black
-        Me.txtUsername.Location = New System.Drawing.Point(72, 20)
+        Me.txtUsername.Location = New System.Drawing.Point(54, 16)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(246, 23)
+        Me.txtUsername.Size = New System.Drawing.Size(185, 19)
         Me.txtUsername.TabIndex = 4
         '
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.RestaurantManagementSystem.My.Resources.Resources.icons8_account_48
-        Me.PictureBox2.Location = New System.Drawing.Point(6, 6)
+        Me.PictureBox2.Location = New System.Drawing.Point(5, 5)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(49, 52)
+        Me.PictureBox2.Size = New System.Drawing.Size(37, 42)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox2.TabIndex = 3
         Me.PictureBox2.TabStop = False
@@ -84,9 +88,11 @@ Partial Class Form1
         Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtPassword.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.ForeColor = System.Drawing.Color.Black
-        Me.txtPassword.Location = New System.Drawing.Point(72, 21)
+        Me.txtPassword.Location = New System.Drawing.Point(54, 17)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(246, 23)
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtPassword.Size = New System.Drawing.Size(185, 19)
         Me.txtPassword.TabIndex = 4
         '
         'Panel2
@@ -94,15 +100,17 @@ Partial Class Form1
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.Controls.Add(Me.txtPassword)
         Me.Panel2.Controls.Add(Me.PictureBox3)
-        Me.Panel2.Location = New System.Drawing.Point(83, 355)
+        Me.Panel2.Location = New System.Drawing.Point(62, 289)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(335, 66)
+        Me.Panel2.Size = New System.Drawing.Size(251, 53)
         Me.Panel2.TabIndex = 3
         '
         'PictureBox3
         '
         Me.PictureBox3.Image = Global.RestaurantManagementSystem.My.Resources.Resources.icons8_password_48
-        Me.PictureBox3.Location = New System.Drawing.Point(6, 8)
+        Me.PictureBox3.Location = New System.Drawing.Point(5, 6)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(48, 48)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -115,9 +123,10 @@ Partial Class Form1
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogin.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.Color.White
-        Me.btnLogin.Location = New System.Drawing.Point(83, 458)
+        Me.btnLogin.Location = New System.Drawing.Point(62, 372)
+        Me.btnLogin.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(335, 44)
+        Me.btnLogin.Size = New System.Drawing.Size(251, 36)
         Me.btnLogin.TabIndex = 4
         Me.btnLogin.Text = "Login"
         Me.btnLogin.UseVisualStyleBackColor = False
@@ -125,9 +134,10 @@ Partial Class Form1
         'btnAdmin
         '
         Me.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAdmin.Location = New System.Drawing.Point(83, 524)
+        Me.btnAdmin.Location = New System.Drawing.Point(62, 426)
+        Me.btnAdmin.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.btnAdmin.Name = "btnAdmin"
-        Me.btnAdmin.Size = New System.Drawing.Size(335, 40)
+        Me.btnAdmin.Size = New System.Drawing.Size(251, 32)
         Me.btnAdmin.TabIndex = 5
         Me.btnAdmin.Text = "Admin"
         Me.btnAdmin.UseVisualStyleBackColor = True
@@ -135,19 +145,20 @@ Partial Class Form1
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.RestaurantManagementSystem.My.Resources.Resources.icons8_male_user_96
-        Me.PictureBox1.Location = New System.Drawing.Point(155, 28)
+        Me.PictureBox1.Location = New System.Drawing.Point(116, 23)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(156, 156)
+        Me.PictureBox1.Size = New System.Drawing.Size(117, 127)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(489, 648)
+        Me.ClientSize = New System.Drawing.Size(367, 517)
         Me.Controls.Add(Me.btnAdmin)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.Panel2)
@@ -155,6 +166,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Form1"
