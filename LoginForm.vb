@@ -104,4 +104,9 @@ Public Class Form1
             End If
         End If
     End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llnkSignUp.LinkClicked
+        SignUp.Show()
+        Me.Close()
+    End Sub
 End Class
