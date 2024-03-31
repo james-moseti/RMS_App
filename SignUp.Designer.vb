@@ -33,24 +33,30 @@ Partial Class SignUp
         Me.pnlSUEmail = New System.Windows.Forms.Panel()
         Me.tbEmail = New System.Windows.Forms.TextBox()
         Me.pnlSUPassword = New System.Windows.Forms.Panel()
+        Me.tbPassword = New System.Windows.Forms.TextBox()
         Me.lblFirstName = New System.Windows.Forms.Label()
         Me.lblLastName = New System.Windows.Forms.Label()
         Me.lblSUEmail = New System.Windows.Forms.Label()
         Me.lblSUPassword = New System.Windows.Forms.Label()
         Me.tbLastName = New System.Windows.Forms.TextBox()
-        Me.tbPassword = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.tbConfirmPassword = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlFirstName.SuspendLayout()
+        Me.pnlLastName.SuspendLayout()
         Me.pnlSUEmail.SuspendLayout()
         Me.pnlSUPassword.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.RestaurantManagementSystem.My.Resources.Resources.icons8_male_user_96
-        Me.PictureBox1.Location = New System.Drawing.Point(177, 34)
+        Me.PictureBox1.Location = New System.Drawing.Point(133, 27)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(127, 110)
+        Me.PictureBox1.Size = New System.Drawing.Size(95, 90)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
@@ -59,9 +65,10 @@ Partial Class SignUp
         '
         Me.lblSignUp.AutoSize = True
         Me.lblSignUp.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSignUp.Location = New System.Drawing.Point(201, 163)
+        Me.lblSignUp.Location = New System.Drawing.Point(151, 133)
+        Me.lblSignUp.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblSignUp.Name = "lblSignUp"
-        Me.lblSignUp.Size = New System.Drawing.Size(84, 28)
+        Me.lblSignUp.Size = New System.Drawing.Size(67, 21)
         Me.lblSignUp.TabIndex = 1
         Me.lblSignUp.Text = "Sign Up"
         '
@@ -69,9 +76,10 @@ Partial Class SignUp
         '
         Me.lblAlreadyHaveAccount.AutoSize = True
         Me.lblAlreadyHaveAccount.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAlreadyHaveAccount.Location = New System.Drawing.Point(129, 558)
+        Me.lblAlreadyHaveAccount.Location = New System.Drawing.Point(91, 488)
+        Me.lblAlreadyHaveAccount.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAlreadyHaveAccount.Name = "lblAlreadyHaveAccount"
-        Me.lblAlreadyHaveAccount.Size = New System.Drawing.Size(189, 20)
+        Me.lblAlreadyHaveAccount.Size = New System.Drawing.Size(145, 15)
         Me.lblAlreadyHaveAccount.TabIndex = 2
         Me.lblAlreadyHaveAccount.Text = "Already have an account? "
         '
@@ -80,9 +88,10 @@ Partial Class SignUp
         Me.llblSignIn.AutoSize = True
         Me.llblSignIn.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.llblSignIn.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.llblSignIn.Location = New System.Drawing.Point(314, 557)
+        Me.llblSignIn.Location = New System.Drawing.Point(240, 488)
+        Me.llblSignIn.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.llblSignIn.Name = "llblSignIn"
-        Me.llblSignIn.Size = New System.Drawing.Size(56, 20)
+        Me.llblSignIn.Size = New System.Drawing.Size(45, 15)
         Me.llblSignIn.TabIndex = 3
         Me.llblSignIn.TabStop = True
         Me.llblSignIn.Text = "Sign In"
@@ -93,9 +102,10 @@ Partial Class SignUp
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(125, 491)
+        Me.Button1.Location = New System.Drawing.Point(94, 452)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(250, 41)
+        Me.Button1.Size = New System.Drawing.Size(187, 33)
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "Sign Up"
         Me.Button1.UseVisualStyleBackColor = False
@@ -104,9 +114,10 @@ Partial Class SignUp
         '
         Me.pnlFirstName.BackColor = System.Drawing.Color.White
         Me.pnlFirstName.Controls.Add(Me.tbFirstName)
-        Me.pnlFirstName.Location = New System.Drawing.Point(125, 204)
+        Me.pnlFirstName.Location = New System.Drawing.Point(121, 173)
+        Me.pnlFirstName.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.pnlFirstName.Name = "pnlFirstName"
-        Me.pnlFirstName.Size = New System.Drawing.Size(250, 46)
+        Me.pnlFirstName.Size = New System.Drawing.Size(187, 38)
         Me.pnlFirstName.TabIndex = 5
         '
         'tbFirstName
@@ -114,26 +125,31 @@ Partial Class SignUp
         Me.tbFirstName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.tbFirstName.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbFirstName.ForeColor = System.Drawing.Color.Black
-        Me.tbFirstName.Location = New System.Drawing.Point(11, 10)
+        Me.tbFirstName.Location = New System.Drawing.Point(8, 8)
+        Me.tbFirstName.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.tbFirstName.MaxLength = 30
         Me.tbFirstName.Name = "tbFirstName"
-        Me.tbFirstName.Size = New System.Drawing.Size(226, 23)
+        Me.tbFirstName.Size = New System.Drawing.Size(169, 19)
         Me.tbFirstName.TabIndex = 13
         '
         'pnlLastName
         '
         Me.pnlLastName.BackColor = System.Drawing.Color.White
-        Me.pnlLastName.Location = New System.Drawing.Point(125, 280)
+        Me.pnlLastName.Controls.Add(Me.tbLastName)
+        Me.pnlLastName.Location = New System.Drawing.Point(121, 229)
+        Me.pnlLastName.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.pnlLastName.Name = "pnlLastName"
-        Me.pnlLastName.Size = New System.Drawing.Size(250, 46)
+        Me.pnlLastName.Size = New System.Drawing.Size(187, 38)
         Me.pnlLastName.TabIndex = 6
         '
         'pnlSUEmail
         '
         Me.pnlSUEmail.BackColor = System.Drawing.Color.White
         Me.pnlSUEmail.Controls.Add(Me.tbEmail)
-        Me.pnlSUEmail.Location = New System.Drawing.Point(125, 352)
+        Me.pnlSUEmail.Location = New System.Drawing.Point(121, 284)
+        Me.pnlSUEmail.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.pnlSUEmail.Name = "pnlSUEmail"
-        Me.pnlSUEmail.Size = New System.Drawing.Size(250, 46)
+        Me.pnlSUEmail.Size = New System.Drawing.Size(187, 38)
         Me.pnlSUEmail.TabIndex = 7
         '
         'tbEmail
@@ -141,27 +157,44 @@ Partial Class SignUp
         Me.tbEmail.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.tbEmail.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbEmail.ForeColor = System.Drawing.Color.Black
-        Me.tbEmail.Location = New System.Drawing.Point(11, 11)
+        Me.tbEmail.Location = New System.Drawing.Point(8, 10)
+        Me.tbEmail.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.tbEmail.MaxLength = 60
         Me.tbEmail.Name = "tbEmail"
-        Me.tbEmail.Size = New System.Drawing.Size(226, 23)
+        Me.tbEmail.Size = New System.Drawing.Size(169, 19)
         Me.tbEmail.TabIndex = 15
         '
         'pnlSUPassword
         '
         Me.pnlSUPassword.BackColor = System.Drawing.Color.White
         Me.pnlSUPassword.Controls.Add(Me.tbPassword)
-        Me.pnlSUPassword.Location = New System.Drawing.Point(125, 421)
+        Me.pnlSUPassword.Location = New System.Drawing.Point(121, 339)
+        Me.pnlSUPassword.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.pnlSUPassword.Name = "pnlSUPassword"
-        Me.pnlSUPassword.Size = New System.Drawing.Size(250, 46)
+        Me.pnlSUPassword.Size = New System.Drawing.Size(187, 38)
         Me.pnlSUPassword.TabIndex = 8
+        '
+        'tbPassword
+        '
+        Me.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tbPassword.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbPassword.ForeColor = System.Drawing.Color.Black
+        Me.tbPassword.Location = New System.Drawing.Point(8, 9)
+        Me.tbPassword.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.tbPassword.MaxLength = 50
+        Me.tbPassword.Name = "tbPassword"
+        Me.tbPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.tbPassword.Size = New System.Drawing.Size(172, 19)
+        Me.tbPassword.TabIndex = 15
         '
         'lblFirstName
         '
         Me.lblFirstName.AutoSize = True
         Me.lblFirstName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFirstName.Location = New System.Drawing.Point(26, 214)
+        Me.lblFirstName.Location = New System.Drawing.Point(11, 182)
+        Me.lblFirstName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblFirstName.Name = "lblFirstName"
-        Me.lblFirstName.Size = New System.Drawing.Size(83, 20)
+        Me.lblFirstName.Size = New System.Drawing.Size(64, 15)
         Me.lblFirstName.TabIndex = 9
         Me.lblFirstName.Text = "First Name"
         '
@@ -169,9 +202,10 @@ Partial Class SignUp
         '
         Me.lblLastName.AutoSize = True
         Me.lblLastName.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLastName.Location = New System.Drawing.Point(26, 293)
+        Me.lblLastName.Location = New System.Drawing.Point(11, 238)
+        Me.lblLastName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblLastName.Name = "lblLastName"
-        Me.lblLastName.Size = New System.Drawing.Size(80, 20)
+        Me.lblLastName.Size = New System.Drawing.Size(63, 15)
         Me.lblLastName.TabIndex = 10
         Me.lblLastName.Text = "Last Name"
         '
@@ -179,9 +213,10 @@ Partial Class SignUp
         '
         Me.lblSUEmail.AutoSize = True
         Me.lblSUEmail.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSUEmail.Location = New System.Drawing.Point(26, 365)
+        Me.lblSUEmail.Location = New System.Drawing.Point(11, 296)
+        Me.lblSUEmail.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblSUEmail.Name = "lblSUEmail"
-        Me.lblSUEmail.Size = New System.Drawing.Size(46, 20)
+        Me.lblSUEmail.Size = New System.Drawing.Size(36, 15)
         Me.lblSUEmail.TabIndex = 11
         Me.lblSUEmail.Text = "Email"
         '
@@ -189,9 +224,10 @@ Partial Class SignUp
         '
         Me.lblSUPassword.AutoSize = True
         Me.lblSUPassword.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSUPassword.Location = New System.Drawing.Point(26, 431)
+        Me.lblSUPassword.Location = New System.Drawing.Point(11, 348)
+        Me.lblSUPassword.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblSUPassword.Name = "lblSUPassword"
-        Me.lblSUPassword.Size = New System.Drawing.Size(73, 20)
+        Me.lblSUPassword.Size = New System.Drawing.Size(57, 15)
         Me.lblSUPassword.TabIndex = 12
         Me.lblSUPassword.Text = "Password"
         '
@@ -200,29 +236,55 @@ Partial Class SignUp
         Me.tbLastName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.tbLastName.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbLastName.ForeColor = System.Drawing.Color.Black
-        Me.tbLastName.Location = New System.Drawing.Point(136, 291)
+        Me.tbLastName.Location = New System.Drawing.Point(8, 11)
+        Me.tbLastName.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.tbLastName.MaxLength = 30
         Me.tbLastName.Name = "tbLastName"
-        Me.tbLastName.Size = New System.Drawing.Size(226, 23)
+        Me.tbLastName.Size = New System.Drawing.Size(169, 19)
         Me.tbLastName.TabIndex = 14
         '
-        'tbPassword
+        'Label1
         '
-        Me.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.tbPassword.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbPassword.ForeColor = System.Drawing.Color.Black
-        Me.tbPassword.Location = New System.Drawing.Point(11, 11)
-        Me.tbPassword.Name = "tbPassword"
-        Me.tbPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.tbPassword.Size = New System.Drawing.Size(229, 23)
-        Me.tbPassword.TabIndex = 15
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(11, 406)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(103, 15)
+        Me.Label1.TabIndex = 15
+        Me.Label1.Text = "Confirm Password"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.tbConfirmPassword)
+        Me.Panel1.Location = New System.Drawing.Point(121, 394)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(187, 38)
+        Me.Panel1.TabIndex = 16
+        '
+        'tbConfirmPassword
+        '
+        Me.tbConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tbConfirmPassword.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbConfirmPassword.ForeColor = System.Drawing.Color.Black
+        Me.tbConfirmPassword.Location = New System.Drawing.Point(8, 9)
+        Me.tbConfirmPassword.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.tbConfirmPassword.MaxLength = 50
+        Me.tbConfirmPassword.Name = "tbConfirmPassword"
+        Me.tbConfirmPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.tbConfirmPassword.Size = New System.Drawing.Size(172, 19)
+        Me.tbConfirmPassword.TabIndex = 15
         '
         'SignUp
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(247, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(490, 636)
-        Me.Controls.Add(Me.tbLastName)
+        Me.ClientSize = New System.Drawing.Size(367, 525)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblSUPassword)
         Me.Controls.Add(Me.lblSUEmail)
         Me.Controls.Add(Me.lblLastName)
@@ -236,6 +298,7 @@ Partial Class SignUp
         Me.Controls.Add(Me.lblAlreadyHaveAccount)
         Me.Controls.Add(Me.lblSignUp)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "SignUp"
@@ -244,10 +307,14 @@ Partial Class SignUp
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlFirstName.ResumeLayout(False)
         Me.pnlFirstName.PerformLayout()
+        Me.pnlLastName.ResumeLayout(False)
+        Me.pnlLastName.PerformLayout()
         Me.pnlSUEmail.ResumeLayout(False)
         Me.pnlSUEmail.PerformLayout()
         Me.pnlSUPassword.ResumeLayout(False)
         Me.pnlSUPassword.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -276,4 +343,7 @@ Partial Class SignUp
     Friend WithEvents tbEmail As TextBox
     Friend WithEvents tbLastName As TextBox
     Friend WithEvents tbPassword As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents tbConfirmPassword As TextBox
 End Class

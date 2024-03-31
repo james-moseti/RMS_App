@@ -82,8 +82,11 @@ Public Class Form1
                     Dim reader1 As SqlDataReader
                     conn1.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & dbPath & ";Integrated Security=True;Connect Timeout=30"
                     conn1.Open()
-                    Dim query1 As String = "SELECT * FROM users WHERE email = '" & txtUsername.Text & "' AND password = '" & txtPassword.Text & "';"
+                    Dim query1 As String = "SELECT * FROM users WHERE email = @email AND password = @password;"
                     cmd1 = New SqlCommand(query1, conn1)
+                    cmd1.Parameters.AddWithValue("@email", txtUsername.Text)
+                    cmd1.Parameters.AddWithValue("@password", txtPassword.Text)
+
                     reader1 = cmd1.ExecuteReader
                     Dim count As Integer = 0
                     While reader1.Read
