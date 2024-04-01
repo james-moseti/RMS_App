@@ -45,7 +45,7 @@ Public Class adminPage
     End Sub
 
     Private Sub btnAboutUs_Click(sender As Object, e As EventArgs) Handles btnUsers.Click
-        'loadtableusers()
+        loadtableusers()
         pnlInventory.Visible = False
         pnlUsers.Visible = True
 
@@ -178,7 +178,7 @@ Public Class adminPage
             Dim query4 As String = "SELECT userid, email, first_name, last_name FROM users;"
             cmd4 = New SqlCommand(query4, conn4)
             da1.SelectCommand = cmd4
-            da1.Fill(dbdataset)
+            da1.Fill(dbdataset1)
             bsource1.DataSource = dbdataset1
             dgvUsers.DataSource = bsource1
             da1.Update(dbdataset1)

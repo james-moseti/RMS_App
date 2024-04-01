@@ -72,7 +72,9 @@ Public Class Form1
                 MessageBox.Show(ex.Message)
             End Try
             If admin = True Then
-                MsgBox("To admin page")
+                MsgBox("Welcome admin")
+                txtUsername.Text = ""
+                txtPassword.Text = ""
                 adminPage.Show()
                 Me.Hide()
             Else
@@ -95,6 +97,8 @@ Public Class Form1
 
                     If count = 1 Then
                         MsgBox("Login successful")
+                        txtUsername.Text = ""
+                        txtPassword.Text = ""
                         Dashboard.Show()
                         Me.Hide()
                     Else
