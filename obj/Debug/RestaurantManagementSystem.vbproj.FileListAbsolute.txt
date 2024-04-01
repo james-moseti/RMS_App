@@ -177,3 +177,4 @@ C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RMS_App\obj\Debug\
 C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RMS_App\obj\Debug\RestaurantManagementSystem.pdb
 C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RMS_App\obj\Debug\RestaurantManagementSystem.SignUp.resources
 C:\Users\Hp\Documents\GitHub\RMS_App\obj\Debug\RestaurantManagementSystem.SignUp.resources
+C:\Users\Hp\Documents\GitHub\RMS_App\obj\Debug\RestaurantManagementSystem.adminPage.resources
