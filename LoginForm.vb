@@ -73,8 +73,8 @@ Public Class Form1
             End Try
             If admin = True Then
                 MsgBox("To admin page")
-                'adminpage.Show()
-                'Me.Hide()
+                adminPage.Show()
+                Me.Hide()
             Else
                 Try
                     Dim conn1 As New SqlConnection
