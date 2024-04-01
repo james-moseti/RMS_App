@@ -262,3 +262,4 @@ C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\SomeCrap\RMS_App\obj\D
 C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\SomeCrap\RMS_App\obj\Debug\RestaurantManagementSystem.exe
 C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\SomeCrap\RMS_App\obj\Debug\RestaurantManagementSystem.xml
 C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\SomeCrap\RMS_App\obj\Debug\RestaurantManagementSystem.pdb
+C:\Users\Dell\Desktop\SoftwareDev\Desktop_GUI_Development\RMS\RMS_App\obj\Debug\RestaurantManagementSystem.adminPage.resources
