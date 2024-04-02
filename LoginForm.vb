@@ -1,10 +1,17 @@
 ﻿Imports System.Diagnostics.Eventing
 Imports System.IO
 Imports Microsoft.Data.SqlClient
+
+Public Module globalvar
+    Public userid As String
+End Module
+
 Public Class Form1
     Dim conn As SqlConnection
     Dim dbPath As String = Path.Combine(Application.StartupPath, "restaurant.mdf")
     Dim cmd As SqlCommand
+
+
 
     Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'txtUsername.Text = "Username"
@@ -93,10 +100,12 @@ Public Class Form1
                     Dim count As Integer = 0
                     While reader1.Read
                         count = count + 1
+                        userid = reader1("userid").ToString
                     End While
 
                     If count = 1 Then
                         MsgBox("Login successful")
+                        'MsgBox(userid)
                         txtUsername.Text = ""
                         txtPassword.Text = ""
                         Dashboard.Show()
