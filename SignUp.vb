@@ -34,8 +34,10 @@ Public Class SignUp
                     cmd2.Parameters.AddWithValue("@email", tbEmail.Text)
                     cmd2.Parameters.AddWithValue("@password", tbPassword.Text)
                     cmd2.ExecuteNonQuery()
-                    MsgBox("Successful, Go back to the login page and log in")
+                    MsgBox("Account created successfully!")
                     conn2.Close()
+                    Form1.Show()
+                    Me.Close()
                     tbFirstName.Text = ""
                     tbLastName.Text = ""
                     tbEmail.Text = ""

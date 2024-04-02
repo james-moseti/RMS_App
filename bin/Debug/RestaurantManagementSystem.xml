@@ -117,6 +117,11 @@ RestaurantManagementSystem
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:RestaurantManagementSystem.My.Resources.Resources.icons8_pancake_stack_94">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:RestaurantManagementSystem.My.Resources.Resources.icons8_password_48">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

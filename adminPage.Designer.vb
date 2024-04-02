@@ -22,6 +22,7 @@ Partial Class adminPage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(adminPage))
         Me.pnlLeftSide = New System.Windows.Forms.Panel()
         Me.pnlOnButtonUsers = New System.Windows.Forms.Panel()
         Me.pnlOnButtonInventory = New System.Windows.Forms.Panel()
@@ -41,9 +42,9 @@ Partial Class adminPage
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.btnAdd = New System.Windows.Forms.Button()
-        Me.btnUpdate = New System.Windows.Forms.Button()
-        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnAddStock = New System.Windows.Forms.Button()
+        Me.btnUpdateStock = New System.Windows.Forms.Button()
+        Me.btnDeleteStock = New System.Windows.Forms.Button()
         Me.pnlInventory = New System.Windows.Forms.Panel()
         Me.gbStockDetails = New System.Windows.Forms.GroupBox()
         Me.dgvInventory = New System.Windows.Forms.DataGridView()
@@ -123,7 +124,7 @@ Partial Class adminPage
         Me.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUsers.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUsers.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnUsers.Image = Global.RestaurantManagementSystem.My.Resources.Resources.btnAboutUs
+        Me.btnUsers.Image = CType(resources.GetObject("btnUsers.Image"), System.Drawing.Image)
         Me.btnUsers.Location = New System.Drawing.Point(-3, 242)
         Me.btnUsers.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnUsers.Name = "btnUsers"
@@ -139,7 +140,7 @@ Partial Class adminPage
         Me.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnInventory.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnInventory.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnInventory.Image = Global.RestaurantManagementSystem.My.Resources.Resources.btnFoods
+        Me.btnInventory.Image = CType(resources.GetObject("btnInventory.Image"), System.Drawing.Image)
         Me.btnInventory.Location = New System.Drawing.Point(-3, 124)
         Me.btnInventory.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnInventory.Name = "btnInventory"
@@ -163,7 +164,7 @@ Partial Class adminPage
         'logoPictureBox
         '
         Me.logoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.logoPictureBox.Image = Global.RestaurantManagementSystem.My.Resources.Resources.logoRestaurant
+        Me.logoPictureBox.Image = CType(resources.GetObject("logoPictureBox.Image"), System.Drawing.Image)
         Me.logoPictureBox.Location = New System.Drawing.Point(20, 12)
         Me.logoPictureBox.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.logoPictureBox.Name = "logoPictureBox"
@@ -187,7 +188,7 @@ Partial Class adminPage
         '
         'picClose
         '
-        Me.picClose.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.btnClose
+        Me.picClose.BackgroundImage = CType(resources.GetObject("picClose.BackgroundImage"), System.Drawing.Image)
         Me.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picClose.Location = New System.Drawing.Point(816, 2)
         Me.picClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -198,7 +199,7 @@ Partial Class adminPage
         '
         'picMinimize
         '
-        Me.picMinimize.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.btnMinimize
+        Me.picMinimize.BackgroundImage = CType(resources.GetObject("picMinimize.BackgroundImage"), System.Drawing.Image)
         Me.picMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picMinimize.Location = New System.Drawing.Point(764, 2)
         Me.picMinimize.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -209,7 +210,7 @@ Partial Class adminPage
         '
         'picMaximize
         '
-        Me.picMaximize.BackgroundImage = Global.RestaurantManagementSystem.My.Resources.Resources.btnMaximize
+        Me.picMaximize.BackgroundImage = CType(resources.GetObject("picMaximize.BackgroundImage"), System.Drawing.Image)
         Me.picMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picMaximize.Location = New System.Drawing.Point(789, 2)
         Me.picMaximize.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -303,47 +304,47 @@ Partial Class adminPage
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "Search by name: "
         '
-        'btnAdd
+        'btnAddStock
         '
-        Me.btnAdd.BackColor = System.Drawing.Color.Lime
-        Me.btnAdd.FlatAppearance.BorderSize = 0
-        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAdd.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(40, 82)
-        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(100, 28)
-        Me.btnAdd.TabIndex = 11
-        Me.btnAdd.Text = "Add"
-        Me.btnAdd.UseVisualStyleBackColor = False
+        Me.btnAddStock.BackColor = System.Drawing.Color.Lime
+        Me.btnAddStock.FlatAppearance.BorderSize = 0
+        Me.btnAddStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddStock.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddStock.Location = New System.Drawing.Point(40, 82)
+        Me.btnAddStock.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnAddStock.Name = "btnAddStock"
+        Me.btnAddStock.Size = New System.Drawing.Size(100, 28)
+        Me.btnAddStock.TabIndex = 11
+        Me.btnAddStock.Text = "Add"
+        Me.btnAddStock.UseVisualStyleBackColor = False
         '
-        'btnUpdate
+        'btnUpdateStock
         '
-        Me.btnUpdate.BackColor = System.Drawing.Color.Orange
-        Me.btnUpdate.FlatAppearance.BorderSize = 0
-        Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUpdate.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.Location = New System.Drawing.Point(161, 82)
-        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(100, 28)
-        Me.btnUpdate.TabIndex = 12
-        Me.btnUpdate.Text = "Update"
-        Me.btnUpdate.UseVisualStyleBackColor = False
+        Me.btnUpdateStock.BackColor = System.Drawing.Color.Orange
+        Me.btnUpdateStock.FlatAppearance.BorderSize = 0
+        Me.btnUpdateStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUpdateStock.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdateStock.Location = New System.Drawing.Point(161, 82)
+        Me.btnUpdateStock.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnUpdateStock.Name = "btnUpdateStock"
+        Me.btnUpdateStock.Size = New System.Drawing.Size(100, 28)
+        Me.btnUpdateStock.TabIndex = 12
+        Me.btnUpdateStock.Text = "Update"
+        Me.btnUpdateStock.UseVisualStyleBackColor = False
         '
-        'btnDelete
+        'btnDeleteStock
         '
-        Me.btnDelete.BackColor = System.Drawing.Color.Red
-        Me.btnDelete.FlatAppearance.BorderSize = 0
-        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDelete.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Location = New System.Drawing.Point(278, 80)
-        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(100, 28)
-        Me.btnDelete.TabIndex = 13
-        Me.btnDelete.Text = "Delete"
-        Me.btnDelete.UseVisualStyleBackColor = False
+        Me.btnDeleteStock.BackColor = System.Drawing.Color.Red
+        Me.btnDeleteStock.FlatAppearance.BorderSize = 0
+        Me.btnDeleteStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDeleteStock.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDeleteStock.Location = New System.Drawing.Point(278, 80)
+        Me.btnDeleteStock.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnDeleteStock.Name = "btnDeleteStock"
+        Me.btnDeleteStock.Size = New System.Drawing.Size(100, 28)
+        Me.btnDeleteStock.TabIndex = 13
+        Me.btnDeleteStock.Text = "Delete"
+        Me.btnDeleteStock.UseVisualStyleBackColor = False
         '
         'pnlInventory
         '
@@ -384,9 +385,9 @@ Partial Class adminPage
         '
         'gbCommand
         '
-        Me.gbCommand.Controls.Add(Me.btnDelete)
-        Me.gbCommand.Controls.Add(Me.btnUpdate)
-        Me.gbCommand.Controls.Add(Me.btnAdd)
+        Me.gbCommand.Controls.Add(Me.btnDeleteStock)
+        Me.gbCommand.Controls.Add(Me.btnUpdateStock)
+        Me.gbCommand.Controls.Add(Me.btnAddStock)
         Me.gbCommand.Controls.Add(Me.Label4)
         Me.gbCommand.Controls.Add(Me.tbSearch)
         Me.gbCommand.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -661,9 +662,9 @@ Partial Class adminPage
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents btnAdd As Button
-    Friend WithEvents btnUpdate As Button
-    Friend WithEvents btnDelete As Button
+    Friend WithEvents btnAddStock As Button
+    Friend WithEvents btnUpdateStock As Button
+    Friend WithEvents btnDeleteStock As Button
     Friend WithEvents pnlInventory As Panel
     Friend WithEvents dgvInventory As DataGridView
     Friend WithEvents pnlOnButtonUsers As Panel

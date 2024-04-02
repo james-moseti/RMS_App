@@ -77,7 +77,98 @@ Public Class adminPage
         End Try
     End Sub
 
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+    Private Sub btnAddStock_Click(sender As Object, e As EventArgs) Handles btnAddStock.Click
+        conn3 = New SqlConnection()
+        conn3.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & dbPath & ";Integrated Security=True;Connect Timeout=30"
+        Try
+            conn3.Open()
+            Dim query3 As String = "INSERT INTO inventory (name, price, quantity) VALUES (@name, @price, @quantity);"
+            cmd3 = New SqlCommand(query3, conn3)
+            cmd3.Parameters.AddWithValue("@name", tbName.Text)
+            cmd3.Parameters.AddWithValue("@price", tbPrice.Text)
+            cmd3.Parameters.AddWithValue("@quantity", tbQuantity.Text)
+            cmd3.ExecuteNonQuery()
+            conn3.Close()
+            MsgBox("Item added successfully")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conn3.Dispose()
+        End Try
+        loadtableinventory()
+        reset()
+    End Sub
+    Private Sub reset()
+        tbName.Text = ""
+        tbPrice.Text = ""
+        tbQuantity.Text = ""
+        tbSearch.Text = ""
+    End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdateStock.Click
+        conn3 = New SqlConnection()
+        conn3.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & dbPath & ";Integrated Security=True;Connect Timeout=30"
+        Try
+            conn3.Open()
+            Dim query3 As String = "UPDATE inventory SET name = @name, price = @price, quantity = @quantity WHERE itemid = @itemid;"
+            cmd3 = New SqlCommand(query3, conn3)
+            cmd3.Parameters.AddWithValue("@name", tbName.Text)
+            cmd3.Parameters.AddWithValue("@price", tbPrice.Text)
+            cmd3.Parameters.AddWithValue("@quantity", tbQuantity.Text)
+            cmd3.Parameters.AddWithValue("@itemid", itemid)
+            cmd3.ExecuteNonQuery()
+            conn3.Close()
+            MsgBox("Item Updated successfully")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conn3.Dispose()
+        End Try
+        loadtableinventory()
+        reset()
+    End Sub
+
+    Private Sub dgvInventory_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvInventory.CellContentClick, dgvInventory.CellClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow
+            row = dgvInventory.Rows(e.RowIndex)
+            tbName.Text = row.Cells("name").Value.ToString
+            tbPrice.Text = row.Cells("price").Value.ToString
+            tbQuantity.Text = row.Cells("quantity").Value.ToString
+            itemid = row.Cells("itemid").Value.ToString
+        End If
+    End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDeleteStock.Click
+        conn3 = New SqlConnection()
+        conn3.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & dbPath & ";Integrated Security=True;Connect Timeout=30"
+        Try
+            conn3.Open()
+            Dim query3 As String = "DELETE FROM inventory WHERE itemid = @itemid;"
+            cmd3 = New SqlCommand(query3, conn3)
+            cmd3.Parameters.AddWithValue("@itemid", itemid)
+            cmd3.ExecuteNonQuery()
+            conn3.Close()
+            MsgBox("Item Deleted successfully")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conn3.Dispose()
+        End Try
+        loadtableinventory()
+        reset()
+    End Sub
+
+    Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs) Handles tbSearch.TextChanged
+        Try
+            Dim dv As New DataView(dbdataset)
+            dv.RowFilter = String.Format("name like '%{0}%'", tbSearch.Text)
+            dgvInventory.DataSource = dv
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAddUser.Click
         conn4 = New SqlConnection()
         conn4.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & dbPath & ";Integrated Security=True;Connect Timeout=30"
         Try
