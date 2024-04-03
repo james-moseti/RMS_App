@@ -121,7 +121,7 @@
   <data name="btnUsers.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxEAAAsRAX9kX5EAAAF1SURBVEhL7dNPK0RRGMfxqcnG
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAAAF1SURBVEhL7dNPK0RRGMfxqcnG
         bGxlga1s/IkVpaT8eRPiBSgLxRsgO29BkoWtndjICo1YkrwA2Yvr+7vm6MyZ59x7Lc6s/OpT9z7nOc/T
         NDO1LMu6yiymZBZTMospmcWUzGIFfS3WWSGzWGAM13DR8zisXpNZjBjCO8KoNgzrTgezGHGAWHRm3eng
         HnqwjSucYRFtjbhALJcI+xegWZq5A+34XXgIP19YgT/gGLGcwO9dhmb4OUK+sB/hoaJP5A+ZwSfCqDYL
@@ -134,7 +134,7 @@
   <data name="btnInventory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxEAAAsRAX9kX5EAAANaSURBVEhLpZZJqM1RHMc98wKR
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAAANaSURBVEhLpZZJqM1RHMc98wKR
         FBtTGTMkUgovY2ZKsbDBylAoKSsWypSwsrRib9qQjWeeoyhzxp5ZlDzh+nzuvb/buf/3v57Htz7d8z/D
         73fuOb/zO6dNoVBoiTqYDLvgHDRCUxnL1tlmH/vm2aiQW1mmLSyHe/ACDsACGAQ9yli2zjb73IcV4Ng8
         mzUdaugy3IDZ0B6mw3Y4CpfKWLZuBtjHvtfBsf2hme1mFTAT3sNm6ATr4Tm0JPtsAMdsgpcwCarsV32A
@@ -155,7 +155,7 @@
   <data name="logoPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAABL5JREFUaEPtV11sFFUYHVJ3t0YSotDiAwnGtDz4ohiNRmOiJsRETbRGEwVMBEtr
+        EAAACxABrSO9dQAABL5JREFUaEPtV11sFFUYHVJ3t0YSotDiAwnGtDz4ohiNRmOiJsRETbRGEwVMBEtr
         gkRj/IGIQY0+aKWtooL4QBG6tkS61LZoWbZ/skkbi1Qr20ZBH9pmLUoVaKLUmuP33b07e3vnzrbB3eyk
         7klOdnbuOd93vpnZmVkrj/kG7LGuIVYRB4mTgnXWd8S3eU3KvAfAWkAhX8Je30VE1wKjDcD548R+2v4U
         iK4BPvH9RUO8KC3eAoV/B6ESYOIY8E/czIkeoOla0BBV0uYNUPgyHLgamBxA7/EuPFz5DB6q2ISNL2/D

@@ -23,6 +23,8 @@ Partial Class Dashboard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlLeftSide = New System.Windows.Forms.Panel()
         Me.pnlOnButtonAbout = New System.Windows.Forms.Panel()
         Me.pnlOnButtonCart = New System.Windows.Forms.Panel()
@@ -115,6 +117,7 @@ Partial Class Dashboard
         Me.btnSubNoodles = New System.Windows.Forms.Button()
         Me.btnAddNoodles = New System.Windows.Forms.Button()
         Me.pnlMyCart = New System.Windows.Forms.Panel()
+        Me.dgvCart = New System.Windows.Forms.DataGridView()
         Me.txtCardNumber = New System.Windows.Forms.TextBox()
         Me.lblCardNumber = New System.Windows.Forms.Label()
         Me.btnCheckout = New System.Windows.Forms.Button()
@@ -126,8 +129,8 @@ Partial Class Dashboard
         Me.cbCountyCart = New System.Windows.Forms.ComboBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtfirstnamecart = New System.Windows.Forms.TextBox()
+        Me.txtlastnamecart = New System.Windows.Forms.TextBox()
         Me.txtEmailCart = New System.Windows.Forms.TextBox()
         Me.lblStreetAddressCart = New System.Windows.Forms.Label()
         Me.lblCounty = New System.Windows.Forms.Label()
@@ -136,6 +139,8 @@ Partial Class Dashboard
         Me.lblEmailCart = New System.Windows.Forms.Label()
         Me.lblLastNameCart = New System.Windows.Forms.Label()
         Me.lblFirstNameCart = New System.Windows.Forms.Label()
+        Me.tbTotal = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlLeftSide.SuspendLayout()
         CType(Me.logoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlTopSide.SuspendLayout()
@@ -157,6 +162,7 @@ Partial Class Dashboard
         Me.Panel6.SuspendLayout()
         Me.pnlFoods.SuspendLayout()
         Me.pnlMyCart.SuspendLayout()
+        CType(Me.dgvCart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlLeftSide
@@ -174,36 +180,36 @@ Partial Class Dashboard
         Me.pnlLeftSide.Controls.Add(Me.btnFoods)
         Me.pnlLeftSide.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnlLeftSide.Location = New System.Drawing.Point(0, 0)
-        Me.pnlLeftSide.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pnlLeftSide.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.pnlLeftSide.Name = "pnlLeftSide"
-        Me.pnlLeftSide.Size = New System.Drawing.Size(285, 614)
+        Me.pnlLeftSide.Size = New System.Drawing.Size(214, 481)
         Me.pnlLeftSide.TabIndex = 0
         '
         'pnlOnButtonAbout
         '
         Me.pnlOnButtonAbout.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(8, Byte), Integer))
-        Me.pnlOnButtonAbout.Location = New System.Drawing.Point(0, 320)
-        Me.pnlOnButtonAbout.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pnlOnButtonAbout.Location = New System.Drawing.Point(0, 260)
+        Me.pnlOnButtonAbout.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.pnlOnButtonAbout.Name = "pnlOnButtonAbout"
-        Me.pnlOnButtonAbout.Size = New System.Drawing.Size(11, 54)
+        Me.pnlOnButtonAbout.Size = New System.Drawing.Size(8, 44)
         Me.pnlOnButtonAbout.TabIndex = 3
         '
         'pnlOnButtonCart
         '
         Me.pnlOnButtonCart.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(8, Byte), Integer))
-        Me.pnlOnButtonCart.Location = New System.Drawing.Point(0, 247)
-        Me.pnlOnButtonCart.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pnlOnButtonCart.Location = New System.Drawing.Point(0, 201)
+        Me.pnlOnButtonCart.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.pnlOnButtonCart.Name = "pnlOnButtonCart"
-        Me.pnlOnButtonCart.Size = New System.Drawing.Size(11, 54)
+        Me.pnlOnButtonCart.Size = New System.Drawing.Size(8, 44)
         Me.pnlOnButtonCart.TabIndex = 3
         '
         'pnlOnButtonDrinks
         '
         Me.pnlOnButtonDrinks.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(8, Byte), Integer))
-        Me.pnlOnButtonDrinks.Location = New System.Drawing.Point(0, 174)
-        Me.pnlOnButtonDrinks.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pnlOnButtonDrinks.Location = New System.Drawing.Point(0, 142)
+        Me.pnlOnButtonDrinks.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.pnlOnButtonDrinks.Name = "pnlOnButtonDrinks"
-        Me.pnlOnButtonDrinks.Size = New System.Drawing.Size(11, 54)
+        Me.pnlOnButtonDrinks.Size = New System.Drawing.Size(8, 44)
         Me.pnlOnButtonDrinks.TabIndex = 3
         '
         'weFoods
@@ -211,9 +217,10 @@ Partial Class Dashboard
         Me.weFoods.AutoSize = True
         Me.weFoods.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.weFoods.ForeColor = System.Drawing.SystemColors.Control
-        Me.weFoods.Location = New System.Drawing.Point(96, 18)
+        Me.weFoods.Location = New System.Drawing.Point(72, 14)
+        Me.weFoods.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.weFoods.Name = "weFoods"
-        Me.weFoods.Size = New System.Drawing.Size(147, 41)
+        Me.weFoods.Size = New System.Drawing.Size(118, 32)
         Me.weFoods.TabIndex = 2
         Me.weFoods.Text = "WeFoods"
         '
@@ -221,10 +228,10 @@ Partial Class Dashboard
         '
         Me.logoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.logoPictureBox.Image = CType(resources.GetObject("logoPictureBox.Image"), System.Drawing.Image)
-        Me.logoPictureBox.Location = New System.Drawing.Point(20, 12)
-        Me.logoPictureBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.logoPictureBox.Location = New System.Drawing.Point(15, 10)
+        Me.logoPictureBox.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.logoPictureBox.Name = "logoPictureBox"
-        Me.logoPictureBox.Size = New System.Drawing.Size(60, 57)
+        Me.logoPictureBox.Size = New System.Drawing.Size(45, 46)
         Me.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.logoPictureBox.TabIndex = 2
         Me.logoPictureBox.TabStop = False
@@ -236,10 +243,10 @@ Partial Class Dashboard
         Me.btnAboutUs.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAboutUs.ForeColor = System.Drawing.SystemColors.Control
         Me.btnAboutUs.Image = CType(resources.GetObject("btnAboutUs.Image"), System.Drawing.Image)
-        Me.btnAboutUs.Location = New System.Drawing.Point(0, 320)
-        Me.btnAboutUs.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAboutUs.Location = New System.Drawing.Point(0, 260)
+        Me.btnAboutUs.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnAboutUs.Name = "btnAboutUs"
-        Me.btnAboutUs.Size = New System.Drawing.Size(285, 54)
+        Me.btnAboutUs.Size = New System.Drawing.Size(214, 44)
         Me.btnAboutUs.TabIndex = 8
         Me.btnAboutUs.Text = "  About Us"
         Me.btnAboutUs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -252,10 +259,10 @@ Partial Class Dashboard
         Me.btnMyCart.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMyCart.ForeColor = System.Drawing.SystemColors.Control
         Me.btnMyCart.Image = CType(resources.GetObject("btnMyCart.Image"), System.Drawing.Image)
-        Me.btnMyCart.Location = New System.Drawing.Point(0, 247)
-        Me.btnMyCart.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnMyCart.Location = New System.Drawing.Point(0, 201)
+        Me.btnMyCart.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnMyCart.Name = "btnMyCart"
-        Me.btnMyCart.Size = New System.Drawing.Size(285, 54)
+        Me.btnMyCart.Size = New System.Drawing.Size(214, 44)
         Me.btnMyCart.TabIndex = 6
         Me.btnMyCart.Text = "  My Cart"
         Me.btnMyCart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -268,10 +275,10 @@ Partial Class Dashboard
         Me.btnDrinks.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDrinks.ForeColor = System.Drawing.SystemColors.Control
         Me.btnDrinks.Image = CType(resources.GetObject("btnDrinks.Image"), System.Drawing.Image)
-        Me.btnDrinks.Location = New System.Drawing.Point(0, 174)
-        Me.btnDrinks.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnDrinks.Location = New System.Drawing.Point(0, 142)
+        Me.btnDrinks.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnDrinks.Name = "btnDrinks"
-        Me.btnDrinks.Size = New System.Drawing.Size(285, 54)
+        Me.btnDrinks.Size = New System.Drawing.Size(214, 44)
         Me.btnDrinks.TabIndex = 4
         Me.btnDrinks.Text = "   Drinks"
         Me.btnDrinks.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -280,10 +287,10 @@ Partial Class Dashboard
         'pnlOnButtonFood
         '
         Me.pnlOnButtonFood.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(8, Byte), Integer))
-        Me.pnlOnButtonFood.Location = New System.Drawing.Point(-1, 101)
-        Me.pnlOnButtonFood.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pnlOnButtonFood.Location = New System.Drawing.Point(-1, 82)
+        Me.pnlOnButtonFood.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.pnlOnButtonFood.Name = "pnlOnButtonFood"
-        Me.pnlOnButtonFood.Size = New System.Drawing.Size(11, 54)
+        Me.pnlOnButtonFood.Size = New System.Drawing.Size(8, 44)
         Me.pnlOnButtonFood.TabIndex = 2
         '
         'btnFoods
@@ -293,10 +300,10 @@ Partial Class Dashboard
         Me.btnFoods.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFoods.ForeColor = System.Drawing.SystemColors.Control
         Me.btnFoods.Image = CType(resources.GetObject("btnFoods.Image"), System.Drawing.Image)
-        Me.btnFoods.Location = New System.Drawing.Point(0, 101)
-        Me.btnFoods.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnFoods.Location = New System.Drawing.Point(0, 82)
+        Me.btnFoods.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnFoods.Name = "btnFoods"
-        Me.btnFoods.Size = New System.Drawing.Size(285, 54)
+        Me.btnFoods.Size = New System.Drawing.Size(214, 44)
         Me.btnFoods.TabIndex = 2
         Me.btnFoods.Text = "   Foods"
         Me.btnFoods.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -309,20 +316,20 @@ Partial Class Dashboard
         Me.pnlTopSide.Controls.Add(Me.picMinimize)
         Me.pnlTopSide.Controls.Add(Me.picMaximize)
         Me.pnlTopSide.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlTopSide.Location = New System.Drawing.Point(285, 0)
-        Me.pnlTopSide.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pnlTopSide.Location = New System.Drawing.Point(214, 0)
+        Me.pnlTopSide.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.pnlTopSide.Name = "pnlTopSide"
-        Me.pnlTopSide.Size = New System.Drawing.Size(903, 71)
+        Me.pnlTopSide.Size = New System.Drawing.Size(653, 58)
         Me.pnlTopSide.TabIndex = 1
         '
         'picClose
         '
         Me.picClose.BackgroundImage = CType(resources.GetObject("picClose.BackgroundImage"), System.Drawing.Image)
         Me.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.picClose.Location = New System.Drawing.Point(878, 2)
-        Me.picClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.picClose.Location = New System.Drawing.Point(659, 1)
+        Me.picClose.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.picClose.Name = "picClose"
-        Me.picClose.Size = New System.Drawing.Size(20, 20)
+        Me.picClose.Size = New System.Drawing.Size(15, 16)
         Me.picClose.TabIndex = 2
         Me.picClose.TabStop = False
         '
@@ -330,10 +337,10 @@ Partial Class Dashboard
         '
         Me.picMinimize.BackgroundImage = CType(resources.GetObject("picMinimize.BackgroundImage"), System.Drawing.Image)
         Me.picMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.picMinimize.Location = New System.Drawing.Point(826, 2)
-        Me.picMinimize.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.picMinimize.Location = New System.Drawing.Point(619, 1)
+        Me.picMinimize.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.picMinimize.Name = "picMinimize"
-        Me.picMinimize.Size = New System.Drawing.Size(20, 20)
+        Me.picMinimize.Size = New System.Drawing.Size(15, 16)
         Me.picMinimize.TabIndex = 9
         Me.picMinimize.TabStop = False
         '
@@ -341,10 +348,10 @@ Partial Class Dashboard
         '
         Me.picMaximize.BackgroundImage = CType(resources.GetObject("picMaximize.BackgroundImage"), System.Drawing.Image)
         Me.picMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.picMaximize.Location = New System.Drawing.Point(854, 2)
-        Me.picMaximize.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.picMaximize.Location = New System.Drawing.Point(641, 1)
+        Me.picMaximize.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.picMaximize.Name = "picMaximize"
-        Me.picMaximize.Size = New System.Drawing.Size(20, 20)
+        Me.picMaximize.Size = New System.Drawing.Size(15, 16)
         Me.picMaximize.TabIndex = 10
         Me.picMaximize.TabStop = False
         '
@@ -375,10 +382,10 @@ Partial Class Dashboard
         Me.pnlDrinks.Controls.Add(Me.pnlMilk)
         Me.pnlDrinks.Controls.Add(Me.pnlCoffee)
         Me.pnlDrinks.Controls.Add(Me.pnlCola)
-        Me.pnlDrinks.Location = New System.Drawing.Point(286, 74)
-        Me.pnlDrinks.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pnlDrinks.Location = New System.Drawing.Point(215, 60)
+        Me.pnlDrinks.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.pnlDrinks.Name = "pnlDrinks"
-        Me.pnlDrinks.Size = New System.Drawing.Size(903, 538)
+        Me.pnlDrinks.Size = New System.Drawing.Size(677, 437)
         Me.pnlDrinks.TabIndex = 2
         '
         'btnAddBeer
@@ -388,20 +395,20 @@ Partial Class Dashboard
         Me.btnAddBeer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddBeer.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddBeer.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAddBeer.Location = New System.Drawing.Point(656, 428)
-        Me.btnAddBeer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAddBeer.Location = New System.Drawing.Point(492, 348)
+        Me.btnAddBeer.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnAddBeer.Name = "btnAddBeer"
-        Me.btnAddBeer.Size = New System.Drawing.Size(36, 30)
+        Me.btnAddBeer.Size = New System.Drawing.Size(27, 25)
         Me.btnAddBeer.TabIndex = 40
         Me.btnAddBeer.Text = "+"
         Me.btnAddBeer.UseVisualStyleBackColor = False
         '
         'txtBeer
         '
-        Me.txtBeer.Location = New System.Drawing.Point(701, 433)
-        Me.txtBeer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtBeer.Location = New System.Drawing.Point(526, 352)
+        Me.txtBeer.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtBeer.Name = "txtBeer"
-        Me.txtBeer.Size = New System.Drawing.Size(26, 22)
+        Me.txtBeer.Size = New System.Drawing.Size(21, 20)
         Me.txtBeer.TabIndex = 39
         Me.txtBeer.Text = "0"
         Me.txtBeer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -413,10 +420,10 @@ Partial Class Dashboard
         Me.btnSubBeer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubBeer.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubBeer.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSubBeer.Location = New System.Drawing.Point(737, 428)
-        Me.btnSubBeer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnSubBeer.Location = New System.Drawing.Point(553, 348)
+        Me.btnSubBeer.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnSubBeer.Name = "btnSubBeer"
-        Me.btnSubBeer.Size = New System.Drawing.Size(37, 30)
+        Me.btnSubBeer.Size = New System.Drawing.Size(28, 25)
         Me.btnSubBeer.TabIndex = 38
         Me.btnSubBeer.Text = "-"
         Me.btnSubBeer.UseVisualStyleBackColor = False
@@ -428,20 +435,20 @@ Partial Class Dashboard
         Me.btnSubMate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubMate.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubMate.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSubMate.Location = New System.Drawing.Point(442, 425)
-        Me.btnSubMate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnSubMate.Location = New System.Drawing.Point(331, 345)
+        Me.btnSubMate.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnSubMate.Name = "btnSubMate"
-        Me.btnSubMate.Size = New System.Drawing.Size(37, 30)
+        Me.btnSubMate.Size = New System.Drawing.Size(28, 25)
         Me.btnSubMate.TabIndex = 37
         Me.btnSubMate.Text = "-"
         Me.btnSubMate.UseVisualStyleBackColor = False
         '
         'txtMate
         '
-        Me.txtMate.Location = New System.Drawing.Point(405, 430)
-        Me.txtMate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtMate.Location = New System.Drawing.Point(304, 350)
+        Me.txtMate.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtMate.Name = "txtMate"
-        Me.txtMate.Size = New System.Drawing.Size(26, 22)
+        Me.txtMate.Size = New System.Drawing.Size(21, 20)
         Me.txtMate.TabIndex = 36
         Me.txtMate.Text = "0"
         Me.txtMate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -453,10 +460,10 @@ Partial Class Dashboard
         Me.btnAddMate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddMate.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddMate.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAddMate.Location = New System.Drawing.Point(360, 425)
-        Me.btnAddMate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAddMate.Location = New System.Drawing.Point(270, 345)
+        Me.btnAddMate.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnAddMate.Name = "btnAddMate"
-        Me.btnAddMate.Size = New System.Drawing.Size(36, 30)
+        Me.btnAddMate.Size = New System.Drawing.Size(27, 25)
         Me.btnAddMate.TabIndex = 35
         Me.btnAddMate.Text = "+"
         Me.btnAddMate.UseVisualStyleBackColor = False
@@ -468,20 +475,20 @@ Partial Class Dashboard
         Me.btnSubChampagne.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubChampagne.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubChampagne.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSubChampagne.Location = New System.Drawing.Point(150, 425)
-        Me.btnSubChampagne.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnSubChampagne.Location = New System.Drawing.Point(113, 345)
+        Me.btnSubChampagne.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnSubChampagne.Name = "btnSubChampagne"
-        Me.btnSubChampagne.Size = New System.Drawing.Size(37, 30)
+        Me.btnSubChampagne.Size = New System.Drawing.Size(28, 25)
         Me.btnSubChampagne.TabIndex = 34
         Me.btnSubChampagne.Text = "-"
         Me.btnSubChampagne.UseVisualStyleBackColor = False
         '
         'txtChampagne
         '
-        Me.txtChampagne.Location = New System.Drawing.Point(114, 430)
-        Me.txtChampagne.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtChampagne.Location = New System.Drawing.Point(85, 350)
+        Me.txtChampagne.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtChampagne.Name = "txtChampagne"
-        Me.txtChampagne.Size = New System.Drawing.Size(26, 22)
+        Me.txtChampagne.Size = New System.Drawing.Size(21, 20)
         Me.txtChampagne.TabIndex = 33
         Me.txtChampagne.Text = "0"
         Me.txtChampagne.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -493,10 +500,10 @@ Partial Class Dashboard
         Me.btnAddChampagne.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddChampagne.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddChampagne.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAddChampagne.Location = New System.Drawing.Point(71, 425)
-        Me.btnAddChampagne.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAddChampagne.Location = New System.Drawing.Point(53, 345)
+        Me.btnAddChampagne.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnAddChampagne.Name = "btnAddChampagne"
-        Me.btnAddChampagne.Size = New System.Drawing.Size(36, 30)
+        Me.btnAddChampagne.Size = New System.Drawing.Size(27, 25)
         Me.btnAddChampagne.TabIndex = 32
         Me.btnAddChampagne.Text = "+"
         Me.btnAddChampagne.UseVisualStyleBackColor = False
@@ -508,20 +515,20 @@ Partial Class Dashboard
         Me.btnSubMilk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubMilk.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubMilk.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSubMilk.Location = New System.Drawing.Point(737, 203)
-        Me.btnSubMilk.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnSubMilk.Location = New System.Drawing.Point(553, 165)
+        Me.btnSubMilk.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnSubMilk.Name = "btnSubMilk"
-        Me.btnSubMilk.Size = New System.Drawing.Size(37, 30)
+        Me.btnSubMilk.Size = New System.Drawing.Size(28, 25)
         Me.btnSubMilk.TabIndex = 31
         Me.btnSubMilk.Text = "-"
         Me.btnSubMilk.UseVisualStyleBackColor = False
         '
         'txtMilk
         '
-        Me.txtMilk.Location = New System.Drawing.Point(701, 207)
-        Me.txtMilk.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtMilk.Location = New System.Drawing.Point(526, 168)
+        Me.txtMilk.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtMilk.Name = "txtMilk"
-        Me.txtMilk.Size = New System.Drawing.Size(26, 22)
+        Me.txtMilk.Size = New System.Drawing.Size(21, 20)
         Me.txtMilk.TabIndex = 30
         Me.txtMilk.Text = "0"
         Me.txtMilk.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -533,10 +540,10 @@ Partial Class Dashboard
         Me.btnAddMilk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddMilk.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddMilk.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAddMilk.Location = New System.Drawing.Point(656, 203)
-        Me.btnAddMilk.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAddMilk.Location = New System.Drawing.Point(492, 165)
+        Me.btnAddMilk.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnAddMilk.Name = "btnAddMilk"
-        Me.btnAddMilk.Size = New System.Drawing.Size(36, 30)
+        Me.btnAddMilk.Size = New System.Drawing.Size(27, 25)
         Me.btnAddMilk.TabIndex = 29
         Me.btnAddMilk.Text = "+"
         Me.btnAddMilk.UseVisualStyleBackColor = False
@@ -548,20 +555,20 @@ Partial Class Dashboard
         Me.btnSubCoffee.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubCoffee.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubCoffee.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSubCoffee.Location = New System.Drawing.Point(442, 202)
-        Me.btnSubCoffee.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnSubCoffee.Location = New System.Drawing.Point(331, 164)
+        Me.btnSubCoffee.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnSubCoffee.Name = "btnSubCoffee"
-        Me.btnSubCoffee.Size = New System.Drawing.Size(37, 30)
+        Me.btnSubCoffee.Size = New System.Drawing.Size(28, 25)
         Me.btnSubCoffee.TabIndex = 28
         Me.btnSubCoffee.Text = "-"
         Me.btnSubCoffee.UseVisualStyleBackColor = False
         '
         'txtCoffee
         '
-        Me.txtCoffee.Location = New System.Drawing.Point(408, 208)
-        Me.txtCoffee.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtCoffee.Location = New System.Drawing.Point(306, 169)
+        Me.txtCoffee.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtCoffee.Name = "txtCoffee"
-        Me.txtCoffee.Size = New System.Drawing.Size(26, 22)
+        Me.txtCoffee.Size = New System.Drawing.Size(21, 20)
         Me.txtCoffee.TabIndex = 27
         Me.txtCoffee.Text = "0"
         Me.txtCoffee.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -573,10 +580,10 @@ Partial Class Dashboard
         Me.btnAddCoffee.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddCoffee.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddCoffee.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAddCoffee.Location = New System.Drawing.Point(363, 203)
-        Me.btnAddCoffee.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAddCoffee.Location = New System.Drawing.Point(272, 165)
+        Me.btnAddCoffee.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnAddCoffee.Name = "btnAddCoffee"
-        Me.btnAddCoffee.Size = New System.Drawing.Size(36, 30)
+        Me.btnAddCoffee.Size = New System.Drawing.Size(27, 25)
         Me.btnAddCoffee.TabIndex = 26
         Me.btnAddCoffee.Text = "+"
         Me.btnAddCoffee.UseVisualStyleBackColor = False
@@ -590,10 +597,10 @@ Partial Class Dashboard
         Me.btnAddToCartDrinks.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnAddToCartDrinks.Image = CType(resources.GetObject("btnAddToCartDrinks.Image"), System.Drawing.Image)
         Me.btnAddToCartDrinks.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAddToCartDrinks.Location = New System.Drawing.Point(288, 473)
-        Me.btnAddToCartDrinks.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAddToCartDrinks.Location = New System.Drawing.Point(216, 384)
+        Me.btnAddToCartDrinks.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnAddToCartDrinks.Name = "btnAddToCartDrinks"
-        Me.btnAddToCartDrinks.Size = New System.Drawing.Size(255, 42)
+        Me.btnAddToCartDrinks.Size = New System.Drawing.Size(191, 34)
         Me.btnAddToCartDrinks.TabIndex = 25
         Me.btnAddToCartDrinks.Text = "Add To Cart"
         Me.btnAddToCartDrinks.UseVisualStyleBackColor = False
@@ -605,20 +612,20 @@ Partial Class Dashboard
         Me.btnSubCola.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubCola.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubCola.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSubCola.Location = New System.Drawing.Point(151, 202)
-        Me.btnSubCola.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnSubCola.Location = New System.Drawing.Point(113, 164)
+        Me.btnSubCola.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnSubCola.Name = "btnSubCola"
-        Me.btnSubCola.Size = New System.Drawing.Size(37, 29)
+        Me.btnSubCola.Size = New System.Drawing.Size(28, 23)
         Me.btnSubCola.TabIndex = 10
         Me.btnSubCola.Text = "-"
         Me.btnSubCola.UseVisualStyleBackColor = False
         '
         'txtCola
         '
-        Me.txtCola.Location = New System.Drawing.Point(116, 206)
-        Me.txtCola.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtCola.Location = New System.Drawing.Point(87, 168)
+        Me.txtCola.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtCola.Name = "txtCola"
-        Me.txtCola.Size = New System.Drawing.Size(26, 22)
+        Me.txtCola.Size = New System.Drawing.Size(21, 20)
         Me.txtCola.TabIndex = 9
         Me.txtCola.Text = "0"
         Me.txtCola.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -630,10 +637,10 @@ Partial Class Dashboard
         Me.btnAddCola.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddCola.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddCola.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAddCola.Location = New System.Drawing.Point(72, 201)
-        Me.btnAddCola.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAddCola.Location = New System.Drawing.Point(54, 163)
+        Me.btnAddCola.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnAddCola.Name = "btnAddCola"
-        Me.btnAddCola.Size = New System.Drawing.Size(36, 30)
+        Me.btnAddCola.Size = New System.Drawing.Size(27, 25)
         Me.btnAddCola.TabIndex = 7
         Me.btnAddCola.Text = "+"
         Me.btnAddCola.UseVisualStyleBackColor = False
@@ -642,19 +649,20 @@ Partial Class Dashboard
         '
         Me.pnlOther.Controls.Add(Me.lblBeer)
         Me.pnlOther.Controls.Add(Me.btnBeer)
-        Me.pnlOther.Location = New System.Drawing.Point(622, 243)
-        Me.pnlOther.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pnlOther.Location = New System.Drawing.Point(467, 198)
+        Me.pnlOther.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.pnlOther.Name = "pnlOther"
-        Me.pnlOther.Size = New System.Drawing.Size(175, 175)
+        Me.pnlOther.Size = New System.Drawing.Size(131, 142)
         Me.pnlOther.TabIndex = 5
         '
         'lblBeer
         '
         Me.lblBeer.AutoSize = True
         Me.lblBeer.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBeer.Location = New System.Drawing.Point(65, 9)
+        Me.lblBeer.Location = New System.Drawing.Point(49, 7)
+        Me.lblBeer.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblBeer.Name = "lblBeer"
-        Me.lblBeer.Size = New System.Drawing.Size(53, 25)
+        Me.lblBeer.Size = New System.Drawing.Size(43, 20)
         Me.lblBeer.TabIndex = 1
         Me.lblBeer.Text = "Beer"
         '
@@ -665,10 +673,10 @@ Partial Class Dashboard
         Me.btnBeer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnBeer.FlatAppearance.BorderSize = 0
         Me.btnBeer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBeer.Location = New System.Drawing.Point(8, 39)
-        Me.btnBeer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnBeer.Location = New System.Drawing.Point(6, 32)
+        Me.btnBeer.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnBeer.Name = "btnBeer"
-        Me.btnBeer.Size = New System.Drawing.Size(160, 124)
+        Me.btnBeer.Size = New System.Drawing.Size(120, 101)
         Me.btnBeer.TabIndex = 0
         Me.btnBeer.UseVisualStyleBackColor = False
         '
@@ -676,19 +684,20 @@ Partial Class Dashboard
         '
         Me.pnlMate.Controls.Add(Me.lblMate)
         Me.pnlMate.Controls.Add(Me.btnMate)
-        Me.pnlMate.Location = New System.Drawing.Point(337, 243)
-        Me.pnlMate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pnlMate.Location = New System.Drawing.Point(253, 198)
+        Me.pnlMate.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.pnlMate.Name = "pnlMate"
-        Me.pnlMate.Size = New System.Drawing.Size(175, 175)
+        Me.pnlMate.Size = New System.Drawing.Size(131, 142)
         Me.pnlMate.TabIndex = 4
         '
         'lblMate
         '
         Me.lblMate.AutoSize = True
         Me.lblMate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMate.Location = New System.Drawing.Point(61, 10)
+        Me.lblMate.Location = New System.Drawing.Point(46, 8)
+        Me.lblMate.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblMate.Name = "lblMate"
-        Me.lblMate.Size = New System.Drawing.Size(56, 25)
+        Me.lblMate.Size = New System.Drawing.Size(45, 20)
         Me.lblMate.TabIndex = 1
         Me.lblMate.Text = "Mate"
         '
@@ -699,10 +708,10 @@ Partial Class Dashboard
         Me.btnMate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnMate.FlatAppearance.BorderSize = 0
         Me.btnMate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMate.Location = New System.Drawing.Point(8, 39)
-        Me.btnMate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnMate.Location = New System.Drawing.Point(6, 32)
+        Me.btnMate.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnMate.Name = "btnMate"
-        Me.btnMate.Size = New System.Drawing.Size(160, 124)
+        Me.btnMate.Size = New System.Drawing.Size(120, 101)
         Me.btnMate.TabIndex = 0
         Me.btnMate.UseVisualStyleBackColor = False
         '
@@ -710,19 +719,20 @@ Partial Class Dashboard
         '
         Me.pnlChampagne.Controls.Add(Me.lblChampagne)
         Me.pnlChampagne.Controls.Add(Me.btnChampagne)
-        Me.pnlChampagne.Location = New System.Drawing.Point(46, 243)
-        Me.pnlChampagne.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pnlChampagne.Location = New System.Drawing.Point(35, 198)
+        Me.pnlChampagne.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.pnlChampagne.Name = "pnlChampagne"
-        Me.pnlChampagne.Size = New System.Drawing.Size(175, 175)
+        Me.pnlChampagne.Size = New System.Drawing.Size(131, 142)
         Me.pnlChampagne.TabIndex = 3
         '
         'lblChampagne
         '
         Me.lblChampagne.AutoSize = True
         Me.lblChampagne.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblChampagne.Location = New System.Drawing.Point(29, 10)
+        Me.lblChampagne.Location = New System.Drawing.Point(22, 8)
+        Me.lblChampagne.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblChampagne.Name = "lblChampagne"
-        Me.lblChampagne.Size = New System.Drawing.Size(120, 25)
+        Me.lblChampagne.Size = New System.Drawing.Size(96, 20)
         Me.lblChampagne.TabIndex = 1
         Me.lblChampagne.Text = "Champagne"
         '
@@ -733,10 +743,10 @@ Partial Class Dashboard
         Me.btnChampagne.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnChampagne.FlatAppearance.BorderSize = 0
         Me.btnChampagne.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnChampagne.Location = New System.Drawing.Point(8, 39)
-        Me.btnChampagne.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnChampagne.Location = New System.Drawing.Point(6, 32)
+        Me.btnChampagne.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnChampagne.Name = "btnChampagne"
-        Me.btnChampagne.Size = New System.Drawing.Size(160, 124)
+        Me.btnChampagne.Size = New System.Drawing.Size(120, 101)
         Me.btnChampagne.TabIndex = 0
         Me.btnChampagne.UseVisualStyleBackColor = False
         '
@@ -744,19 +754,20 @@ Partial Class Dashboard
         '
         Me.pnlMilk.Controls.Add(Me.lblMilk)
         Me.pnlMilk.Controls.Add(Me.btnMilk)
-        Me.pnlMilk.Location = New System.Drawing.Point(619, 14)
-        Me.pnlMilk.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pnlMilk.Location = New System.Drawing.Point(464, 12)
+        Me.pnlMilk.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.pnlMilk.Name = "pnlMilk"
-        Me.pnlMilk.Size = New System.Drawing.Size(175, 175)
+        Me.pnlMilk.Size = New System.Drawing.Size(131, 142)
         Me.pnlMilk.TabIndex = 2
         '
         'lblMilk
         '
         Me.lblMilk.AutoSize = True
         Me.lblMilk.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMilk.Location = New System.Drawing.Point(61, 10)
+        Me.lblMilk.Location = New System.Drawing.Point(46, 8)
+        Me.lblMilk.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblMilk.Name = "lblMilk"
-        Me.lblMilk.Size = New System.Drawing.Size(47, 25)
+        Me.lblMilk.Size = New System.Drawing.Size(36, 20)
         Me.lblMilk.TabIndex = 1
         Me.lblMilk.Text = "Milk"
         '
@@ -767,10 +778,10 @@ Partial Class Dashboard
         Me.btnMilk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnMilk.FlatAppearance.BorderSize = 0
         Me.btnMilk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMilk.Location = New System.Drawing.Point(8, 39)
-        Me.btnMilk.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnMilk.Location = New System.Drawing.Point(6, 32)
+        Me.btnMilk.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnMilk.Name = "btnMilk"
-        Me.btnMilk.Size = New System.Drawing.Size(160, 124)
+        Me.btnMilk.Size = New System.Drawing.Size(120, 101)
         Me.btnMilk.TabIndex = 0
         Me.btnMilk.UseVisualStyleBackColor = False
         '
@@ -778,19 +789,20 @@ Partial Class Dashboard
         '
         Me.pnlCoffee.Controls.Add(Me.lblCoffee)
         Me.pnlCoffee.Controls.Add(Me.btnCoffee)
-        Me.pnlCoffee.Location = New System.Drawing.Point(337, 14)
-        Me.pnlCoffee.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pnlCoffee.Location = New System.Drawing.Point(253, 12)
+        Me.pnlCoffee.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.pnlCoffee.Name = "pnlCoffee"
-        Me.pnlCoffee.Size = New System.Drawing.Size(175, 175)
+        Me.pnlCoffee.Size = New System.Drawing.Size(131, 142)
         Me.pnlCoffee.TabIndex = 1
         '
         'lblCoffee
         '
         Me.lblCoffee.AutoSize = True
         Me.lblCoffee.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCoffee.Location = New System.Drawing.Point(52, 10)
+        Me.lblCoffee.Location = New System.Drawing.Point(39, 8)
+        Me.lblCoffee.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCoffee.Name = "lblCoffee"
-        Me.lblCoffee.Size = New System.Drawing.Size(70, 25)
+        Me.lblCoffee.Size = New System.Drawing.Size(57, 20)
         Me.lblCoffee.TabIndex = 1
         Me.lblCoffee.Text = "Coffee"
         '
@@ -801,10 +813,10 @@ Partial Class Dashboard
         Me.btnCoffee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnCoffee.FlatAppearance.BorderSize = 0
         Me.btnCoffee.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCoffee.Location = New System.Drawing.Point(8, 39)
-        Me.btnCoffee.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnCoffee.Location = New System.Drawing.Point(6, 32)
+        Me.btnCoffee.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnCoffee.Name = "btnCoffee"
-        Me.btnCoffee.Size = New System.Drawing.Size(160, 124)
+        Me.btnCoffee.Size = New System.Drawing.Size(120, 101)
         Me.btnCoffee.TabIndex = 0
         Me.btnCoffee.UseVisualStyleBackColor = False
         '
@@ -812,19 +824,20 @@ Partial Class Dashboard
         '
         Me.pnlCola.Controls.Add(Me.lblCola)
         Me.pnlCola.Controls.Add(Me.btnCola)
-        Me.pnlCola.Location = New System.Drawing.Point(48, 14)
-        Me.pnlCola.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pnlCola.Location = New System.Drawing.Point(36, 12)
+        Me.pnlCola.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.pnlCola.Name = "pnlCola"
-        Me.pnlCola.Size = New System.Drawing.Size(175, 175)
+        Me.pnlCola.Size = New System.Drawing.Size(131, 142)
         Me.pnlCola.TabIndex = 0
         '
         'lblCola
         '
         Me.lblCola.AutoSize = True
         Me.lblCola.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCola.Location = New System.Drawing.Point(61, 10)
+        Me.lblCola.Location = New System.Drawing.Point(46, 8)
+        Me.lblCola.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCola.Name = "lblCola"
-        Me.lblCola.Size = New System.Drawing.Size(53, 25)
+        Me.lblCola.Size = New System.Drawing.Size(41, 20)
         Me.lblCola.TabIndex = 1
         Me.lblCola.Text = "Cola"
         '
@@ -835,10 +848,10 @@ Partial Class Dashboard
         Me.btnCola.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnCola.FlatAppearance.BorderSize = 0
         Me.btnCola.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCola.Location = New System.Drawing.Point(8, 39)
-        Me.btnCola.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnCola.Location = New System.Drawing.Point(6, 32)
+        Me.btnCola.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnCola.Name = "btnCola"
-        Me.btnCola.Size = New System.Drawing.Size(160, 124)
+        Me.btnCola.Size = New System.Drawing.Size(120, 101)
         Me.btnCola.TabIndex = 0
         Me.btnCola.UseVisualStyleBackColor = False
         '
@@ -846,19 +859,20 @@ Partial Class Dashboard
         '
         Me.Panel1.Controls.Add(Me.lblPancake)
         Me.Panel1.Controls.Add(Me.btnPancake)
-        Me.Panel1.Location = New System.Drawing.Point(660, 246)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel1.Location = New System.Drawing.Point(495, 200)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(175, 175)
+        Me.Panel1.Size = New System.Drawing.Size(131, 142)
         Me.Panel1.TabIndex = 5
         '
         'lblPancake
         '
         Me.lblPancake.AutoSize = True
         Me.lblPancake.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPancake.Location = New System.Drawing.Point(45, 8)
+        Me.lblPancake.Location = New System.Drawing.Point(34, 6)
+        Me.lblPancake.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblPancake.Name = "lblPancake"
-        Me.lblPancake.Size = New System.Drawing.Size(89, 25)
+        Me.lblPancake.Size = New System.Drawing.Size(71, 20)
         Me.lblPancake.TabIndex = 1
         Me.lblPancake.Text = "Pancake"
         '
@@ -869,10 +883,10 @@ Partial Class Dashboard
         Me.btnPancake.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnPancake.FlatAppearance.BorderSize = 0
         Me.btnPancake.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPancake.Location = New System.Drawing.Point(8, 39)
-        Me.btnPancake.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnPancake.Location = New System.Drawing.Point(6, 32)
+        Me.btnPancake.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnPancake.Name = "btnPancake"
-        Me.btnPancake.Size = New System.Drawing.Size(160, 124)
+        Me.btnPancake.Size = New System.Drawing.Size(120, 101)
         Me.btnPancake.TabIndex = 0
         Me.btnPancake.UseVisualStyleBackColor = False
         '
@@ -880,19 +894,20 @@ Partial Class Dashboard
         '
         Me.Panel2.Controls.Add(Me.lblBurger)
         Me.Panel2.Controls.Add(Me.Button2)
-        Me.Panel2.Location = New System.Drawing.Point(354, 246)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel2.Location = New System.Drawing.Point(265, 200)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(175, 175)
+        Me.Panel2.Size = New System.Drawing.Size(131, 142)
         Me.Panel2.TabIndex = 4
         '
         'lblBurger
         '
         Me.lblBurger.AutoSize = True
         Me.lblBurger.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBurger.Location = New System.Drawing.Point(31, 10)
+        Me.lblBurger.Location = New System.Drawing.Point(23, 8)
+        Me.lblBurger.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblBurger.Name = "lblBurger"
-        Me.lblBurger.Size = New System.Drawing.Size(109, 25)
+        Me.lblBurger.Size = New System.Drawing.Size(89, 20)
         Me.lblBurger.TabIndex = 1
         Me.lblBurger.Text = "Hamburger"
         '
@@ -903,10 +918,10 @@ Partial Class Dashboard
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(8, 39)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button2.Location = New System.Drawing.Point(6, 32)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(160, 124)
+        Me.Button2.Size = New System.Drawing.Size(120, 101)
         Me.Button2.TabIndex = 0
         Me.Button2.UseVisualStyleBackColor = False
         '
@@ -914,19 +929,20 @@ Partial Class Dashboard
         '
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.Button3)
-        Me.Panel3.Location = New System.Drawing.Point(48, 245)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel3.Location = New System.Drawing.Point(36, 199)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(175, 175)
+        Me.Panel3.Size = New System.Drawing.Size(131, 142)
         Me.Panel3.TabIndex = 3
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(59, 10)
+        Me.Label5.Location = New System.Drawing.Point(44, 8)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(50, 25)
+        Me.Label5.Size = New System.Drawing.Size(41, 20)
         Me.Label5.TabIndex = 1
         Me.Label5.Text = "Rice"
         '
@@ -937,10 +953,10 @@ Partial Class Dashboard
         Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Location = New System.Drawing.Point(8, 39)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button3.Location = New System.Drawing.Point(6, 32)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(160, 124)
+        Me.Button3.Size = New System.Drawing.Size(120, 101)
         Me.Button3.TabIndex = 0
         Me.Button3.UseVisualStyleBackColor = False
         '
@@ -948,19 +964,20 @@ Partial Class Dashboard
         '
         Me.Panel4.Controls.Add(Me.Label6)
         Me.Panel4.Controls.Add(Me.Button4)
-        Me.Panel4.Location = New System.Drawing.Point(660, 13)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel4.Location = New System.Drawing.Point(495, 10)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(175, 175)
+        Me.Panel4.Size = New System.Drawing.Size(131, 142)
         Me.Panel4.TabIndex = 2
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(53, 10)
+        Me.Label6.Location = New System.Drawing.Point(40, 8)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(60, 25)
+        Me.Label6.Size = New System.Drawing.Size(47, 20)
         Me.Label6.TabIndex = 1
         Me.Label6.Text = "Pizza"
         '
@@ -971,10 +988,10 @@ Partial Class Dashboard
         Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button4.FlatAppearance.BorderSize = 0
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Location = New System.Drawing.Point(8, 39)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button4.Location = New System.Drawing.Point(6, 32)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(160, 124)
+        Me.Button4.Size = New System.Drawing.Size(120, 101)
         Me.Button4.TabIndex = 0
         Me.Button4.UseVisualStyleBackColor = False
         '
@@ -982,19 +999,20 @@ Partial Class Dashboard
         '
         Me.Panel5.Controls.Add(Me.Label7)
         Me.Panel5.Controls.Add(Me.Button5)
-        Me.Panel5.Location = New System.Drawing.Point(354, 13)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel5.Location = New System.Drawing.Point(265, 10)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(175, 175)
+        Me.Panel5.Size = New System.Drawing.Size(131, 142)
         Me.Panel5.TabIndex = 1
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(45, 10)
+        Me.Label7.Location = New System.Drawing.Point(34, 8)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(84, 25)
+        Me.Label7.Size = New System.Drawing.Size(67, 20)
         Me.Label7.TabIndex = 1
         Me.Label7.Text = "Noodles"
         '
@@ -1005,10 +1023,10 @@ Partial Class Dashboard
         Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button5.FlatAppearance.BorderSize = 0
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Location = New System.Drawing.Point(8, 39)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button5.Location = New System.Drawing.Point(6, 32)
+        Me.Button5.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(160, 124)
+        Me.Button5.Size = New System.Drawing.Size(120, 101)
         Me.Button5.TabIndex = 0
         Me.Button5.UseVisualStyleBackColor = False
         '
@@ -1016,19 +1034,20 @@ Partial Class Dashboard
         '
         Me.Panel6.Controls.Add(Me.Label8)
         Me.Panel6.Controls.Add(Me.Button6)
-        Me.Panel6.Location = New System.Drawing.Point(48, 13)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel6.Location = New System.Drawing.Point(36, 10)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(175, 175)
+        Me.Panel6.Size = New System.Drawing.Size(131, 142)
         Me.Panel6.TabIndex = 0
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(42, 14)
+        Me.Label8.Location = New System.Drawing.Point(31, 12)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(84, 25)
+        Me.Label8.Size = New System.Drawing.Size(66, 20)
         Me.Label8.TabIndex = 1
         Me.Label8.Text = "Chicken"
         '
@@ -1039,10 +1058,10 @@ Partial Class Dashboard
         Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button6.FlatAppearance.BorderSize = 0
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Location = New System.Drawing.Point(8, 39)
-        Me.Button6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button6.Location = New System.Drawing.Point(6, 32)
+        Me.Button6.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(160, 124)
+        Me.Button6.Size = New System.Drawing.Size(120, 101)
         Me.Button6.TabIndex = 0
         Me.Button6.UseVisualStyleBackColor = False
         '
@@ -1073,10 +1092,10 @@ Partial Class Dashboard
         Me.pnlFoods.Controls.Add(Me.Panel4)
         Me.pnlFoods.Controls.Add(Me.Panel5)
         Me.pnlFoods.Controls.Add(Me.Panel6)
-        Me.pnlFoods.Location = New System.Drawing.Point(287, 72)
-        Me.pnlFoods.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pnlFoods.Location = New System.Drawing.Point(215, 58)
+        Me.pnlFoods.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.pnlFoods.Name = "pnlFoods"
-        Me.pnlFoods.Size = New System.Drawing.Size(902, 538)
+        Me.pnlFoods.Size = New System.Drawing.Size(677, 437)
         Me.pnlFoods.TabIndex = 6
         '
         'btnSubPancake
@@ -1086,20 +1105,20 @@ Partial Class Dashboard
         Me.btnSubPancake.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubPancake.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubPancake.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSubPancake.Location = New System.Drawing.Point(771, 428)
-        Me.btnSubPancake.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnSubPancake.Location = New System.Drawing.Point(578, 348)
+        Me.btnSubPancake.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnSubPancake.Name = "btnSubPancake"
-        Me.btnSubPancake.Size = New System.Drawing.Size(38, 31)
+        Me.btnSubPancake.Size = New System.Drawing.Size(29, 25)
         Me.btnSubPancake.TabIndex = 11
         Me.btnSubPancake.Text = "-"
         Me.btnSubPancake.UseVisualStyleBackColor = False
         '
         'txtPancake
         '
-        Me.txtPancake.Location = New System.Drawing.Point(740, 434)
-        Me.txtPancake.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtPancake.Location = New System.Drawing.Point(555, 352)
+        Me.txtPancake.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtPancake.Name = "txtPancake"
-        Me.txtPancake.Size = New System.Drawing.Size(25, 22)
+        Me.txtPancake.Size = New System.Drawing.Size(20, 20)
         Me.txtPancake.TabIndex = 12
         Me.txtPancake.Text = "0"
         Me.txtPancake.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -1111,10 +1130,10 @@ Partial Class Dashboard
         Me.btnAddBurger.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddBurger.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddBurger.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAddBurger.Location = New System.Drawing.Point(379, 430)
-        Me.btnAddBurger.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAddBurger.Location = New System.Drawing.Point(284, 350)
+        Me.btnAddBurger.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnAddBurger.Name = "btnAddBurger"
-        Me.btnAddBurger.Size = New System.Drawing.Size(38, 31)
+        Me.btnAddBurger.Size = New System.Drawing.Size(29, 25)
         Me.btnAddBurger.TabIndex = 10
         Me.btnAddBurger.Text = "+"
         Me.btnAddBurger.UseVisualStyleBackColor = False
@@ -1126,20 +1145,20 @@ Partial Class Dashboard
         Me.btnAddPancake.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddPancake.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddPancake.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAddPancake.Location = New System.Drawing.Point(697, 428)
-        Me.btnAddPancake.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAddPancake.Location = New System.Drawing.Point(523, 348)
+        Me.btnAddPancake.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnAddPancake.Name = "btnAddPancake"
-        Me.btnAddPancake.Size = New System.Drawing.Size(38, 31)
+        Me.btnAddPancake.Size = New System.Drawing.Size(29, 25)
         Me.btnAddPancake.TabIndex = 10
         Me.btnAddPancake.Text = "+"
         Me.btnAddPancake.UseVisualStyleBackColor = False
         '
         'txtBurger
         '
-        Me.txtBurger.Location = New System.Drawing.Point(423, 434)
-        Me.txtBurger.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtBurger.Location = New System.Drawing.Point(317, 352)
+        Me.txtBurger.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtBurger.Name = "txtBurger"
-        Me.txtBurger.Size = New System.Drawing.Size(25, 22)
+        Me.txtBurger.Size = New System.Drawing.Size(20, 20)
         Me.txtBurger.TabIndex = 12
         Me.txtBurger.Text = "0"
         Me.txtBurger.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -1151,30 +1170,30 @@ Partial Class Dashboard
         Me.btnSubBurger.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubBurger.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubBurger.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSubBurger.Location = New System.Drawing.Point(455, 430)
-        Me.btnSubBurger.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnSubBurger.Location = New System.Drawing.Point(341, 350)
+        Me.btnSubBurger.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnSubBurger.Name = "btnSubBurger"
-        Me.btnSubBurger.Size = New System.Drawing.Size(38, 31)
+        Me.btnSubBurger.Size = New System.Drawing.Size(29, 25)
         Me.btnSubBurger.TabIndex = 11
         Me.btnSubBurger.Text = "-"
         Me.btnSubBurger.UseVisualStyleBackColor = False
         '
         'txtRice
         '
-        Me.txtRice.Location = New System.Drawing.Point(123, 434)
-        Me.txtRice.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtRice.Location = New System.Drawing.Point(92, 352)
+        Me.txtRice.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtRice.Name = "txtRice"
-        Me.txtRice.Size = New System.Drawing.Size(25, 22)
+        Me.txtRice.Size = New System.Drawing.Size(20, 20)
         Me.txtRice.TabIndex = 12
         Me.txtRice.Text = "0"
         Me.txtRice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtPizza
         '
-        Me.txtPizza.Location = New System.Drawing.Point(739, 203)
-        Me.txtPizza.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtPizza.Location = New System.Drawing.Point(554, 165)
+        Me.txtPizza.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtPizza.Name = "txtPizza"
-        Me.txtPizza.Size = New System.Drawing.Size(27, 22)
+        Me.txtPizza.Size = New System.Drawing.Size(21, 20)
         Me.txtPizza.TabIndex = 12
         Me.txtPizza.Text = "0"
         Me.txtPizza.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -1186,10 +1205,10 @@ Partial Class Dashboard
         Me.btnSubRice.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubRice.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubRice.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSubRice.Location = New System.Drawing.Point(154, 430)
-        Me.btnSubRice.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnSubRice.Location = New System.Drawing.Point(115, 350)
+        Me.btnSubRice.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnSubRice.Name = "btnSubRice"
-        Me.btnSubRice.Size = New System.Drawing.Size(38, 31)
+        Me.btnSubRice.Size = New System.Drawing.Size(29, 25)
         Me.btnSubRice.TabIndex = 11
         Me.btnSubRice.Text = "-"
         Me.btnSubRice.UseVisualStyleBackColor = False
@@ -1201,20 +1220,20 @@ Partial Class Dashboard
         Me.btnAddRice.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddRice.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddRice.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAddRice.Location = New System.Drawing.Point(78, 431)
-        Me.btnAddRice.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAddRice.Location = New System.Drawing.Point(59, 350)
+        Me.btnAddRice.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnAddRice.Name = "btnAddRice"
-        Me.btnAddRice.Size = New System.Drawing.Size(38, 30)
+        Me.btnAddRice.Size = New System.Drawing.Size(29, 25)
         Me.btnAddRice.TabIndex = 10
         Me.btnAddRice.Text = "+"
         Me.btnAddRice.UseVisualStyleBackColor = False
         '
         'txtChicken
         '
-        Me.txtChicken.Location = New System.Drawing.Point(123, 202)
-        Me.txtChicken.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtChicken.Location = New System.Drawing.Point(92, 164)
+        Me.txtChicken.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtChicken.Name = "txtChicken"
-        Me.txtChicken.Size = New System.Drawing.Size(26, 22)
+        Me.txtChicken.Size = New System.Drawing.Size(21, 20)
         Me.txtChicken.TabIndex = 8
         Me.txtChicken.Text = "0"
         Me.txtChicken.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -1226,20 +1245,20 @@ Partial Class Dashboard
         Me.btnAddPizza.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddPizza.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddPizza.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAddPizza.Location = New System.Drawing.Point(695, 197)
-        Me.btnAddPizza.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAddPizza.Location = New System.Drawing.Point(521, 160)
+        Me.btnAddPizza.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnAddPizza.Name = "btnAddPizza"
-        Me.btnAddPizza.Size = New System.Drawing.Size(38, 30)
+        Me.btnAddPizza.Size = New System.Drawing.Size(29, 25)
         Me.btnAddPizza.TabIndex = 10
         Me.btnAddPizza.Text = "+"
         Me.btnAddPizza.UseVisualStyleBackColor = False
         '
         'txtNoodles
         '
-        Me.txtNoodles.Location = New System.Drawing.Point(420, 202)
-        Me.txtNoodles.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtNoodles.Location = New System.Drawing.Point(315, 164)
+        Me.txtNoodles.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtNoodles.Name = "txtNoodles"
-        Me.txtNoodles.Size = New System.Drawing.Size(28, 22)
+        Me.txtNoodles.Size = New System.Drawing.Size(22, 20)
         Me.txtNoodles.TabIndex = 10
         Me.txtNoodles.Text = "0"
         Me.txtNoodles.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -1251,10 +1270,10 @@ Partial Class Dashboard
         Me.btnSubPizza.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubPizza.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubPizza.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSubPizza.Location = New System.Drawing.Point(771, 197)
-        Me.btnSubPizza.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnSubPizza.Location = New System.Drawing.Point(578, 160)
+        Me.btnSubPizza.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnSubPizza.Name = "btnSubPizza"
-        Me.btnSubPizza.Size = New System.Drawing.Size(38, 30)
+        Me.btnSubPizza.Size = New System.Drawing.Size(29, 25)
         Me.btnSubPizza.TabIndex = 11
         Me.btnSubPizza.Text = "-"
         Me.btnSubPizza.UseVisualStyleBackColor = False
@@ -1266,10 +1285,10 @@ Partial Class Dashboard
         Me.btnSubChicken.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubChicken.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubChicken.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSubChicken.Location = New System.Drawing.Point(154, 197)
-        Me.btnSubChicken.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnSubChicken.Location = New System.Drawing.Point(115, 160)
+        Me.btnSubChicken.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnSubChicken.Name = "btnSubChicken"
-        Me.btnSubChicken.Size = New System.Drawing.Size(35, 30)
+        Me.btnSubChicken.Size = New System.Drawing.Size(26, 25)
         Me.btnSubChicken.TabIndex = 7
         Me.btnSubChicken.Text = "-"
         Me.btnSubChicken.UseVisualStyleBackColor = False
@@ -1281,10 +1300,10 @@ Partial Class Dashboard
         Me.btnAddChicken.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddChicken.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddChicken.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAddChicken.Location = New System.Drawing.Point(82, 197)
-        Me.btnAddChicken.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAddChicken.Location = New System.Drawing.Point(61, 160)
+        Me.btnAddChicken.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnAddChicken.Name = "btnAddChicken"
-        Me.btnAddChicken.Size = New System.Drawing.Size(36, 30)
+        Me.btnAddChicken.Size = New System.Drawing.Size(27, 25)
         Me.btnAddChicken.TabIndex = 6
         Me.btnAddChicken.Text = "+"
         Me.btnAddChicken.UseVisualStyleBackColor = False
@@ -1298,10 +1317,10 @@ Partial Class Dashboard
         Me.btnAddToCartFoods.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnAddToCartFoods.Image = CType(resources.GetObject("btnAddToCartFoods.Image"), System.Drawing.Image)
         Me.btnAddToCartFoods.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAddToCartFoods.Location = New System.Drawing.Point(316, 474)
-        Me.btnAddToCartFoods.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAddToCartFoods.Location = New System.Drawing.Point(237, 385)
+        Me.btnAddToCartFoods.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnAddToCartFoods.Name = "btnAddToCartFoods"
-        Me.btnAddToCartFoods.Size = New System.Drawing.Size(255, 42)
+        Me.btnAddToCartFoods.Size = New System.Drawing.Size(191, 34)
         Me.btnAddToCartFoods.TabIndex = 24
         Me.btnAddToCartFoods.Text = "Add To Cart"
         Me.btnAddToCartFoods.UseVisualStyleBackColor = False
@@ -1313,10 +1332,10 @@ Partial Class Dashboard
         Me.btnSubNoodles.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubNoodles.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubNoodles.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSubNoodles.Location = New System.Drawing.Point(454, 198)
-        Me.btnSubNoodles.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnSubNoodles.Location = New System.Drawing.Point(341, 161)
+        Me.btnSubNoodles.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnSubNoodles.Name = "btnSubNoodles"
-        Me.btnSubNoodles.Size = New System.Drawing.Size(32, 31)
+        Me.btnSubNoodles.Size = New System.Drawing.Size(24, 25)
         Me.btnSubNoodles.TabIndex = 8
         Me.btnSubNoodles.Text = "-"
         Me.btnSubNoodles.UseVisualStyleBackColor = False
@@ -1328,16 +1347,19 @@ Partial Class Dashboard
         Me.btnAddNoodles.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddNoodles.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddNoodles.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAddNoodles.Location = New System.Drawing.Point(379, 199)
-        Me.btnAddNoodles.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAddNoodles.Location = New System.Drawing.Point(284, 162)
+        Me.btnAddNoodles.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.btnAddNoodles.Name = "btnAddNoodles"
-        Me.btnAddNoodles.Size = New System.Drawing.Size(36, 29)
+        Me.btnAddNoodles.Size = New System.Drawing.Size(27, 23)
         Me.btnAddNoodles.TabIndex = 9
         Me.btnAddNoodles.Text = "+"
         Me.btnAddNoodles.UseVisualStyleBackColor = False
         '
         'pnlMyCart
         '
+        Me.pnlMyCart.Controls.Add(Me.Label1)
+        Me.pnlMyCart.Controls.Add(Me.tbTotal)
+        Me.pnlMyCart.Controls.Add(Me.dgvCart)
         Me.pnlMyCart.Controls.Add(Me.txtCardNumber)
         Me.pnlMyCart.Controls.Add(Me.lblCardNumber)
         Me.pnlMyCart.Controls.Add(Me.btnCheckout)
@@ -1349,8 +1371,8 @@ Partial Class Dashboard
         Me.pnlMyCart.Controls.Add(Me.cbCountyCart)
         Me.pnlMyCart.Controls.Add(Me.TextBox4)
         Me.pnlMyCart.Controls.Add(Me.TextBox3)
-        Me.pnlMyCart.Controls.Add(Me.TextBox2)
-        Me.pnlMyCart.Controls.Add(Me.TextBox1)
+        Me.pnlMyCart.Controls.Add(Me.txtfirstnamecart)
+        Me.pnlMyCart.Controls.Add(Me.txtlastnamecart)
         Me.pnlMyCart.Controls.Add(Me.txtEmailCart)
         Me.pnlMyCart.Controls.Add(Me.lblStreetAddressCart)
         Me.pnlMyCart.Controls.Add(Me.lblCounty)
@@ -1359,19 +1381,57 @@ Partial Class Dashboard
         Me.pnlMyCart.Controls.Add(Me.lblEmailCart)
         Me.pnlMyCart.Controls.Add(Me.lblLastNameCart)
         Me.pnlMyCart.Controls.Add(Me.lblFirstNameCart)
-        Me.pnlMyCart.Location = New System.Drawing.Point(285, 73)
+        Me.pnlMyCart.Location = New System.Drawing.Point(214, 59)
+        Me.pnlMyCart.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.pnlMyCart.Name = "pnlMyCart"
-        Me.pnlMyCart.Size = New System.Drawing.Size(898, 537)
+        Me.pnlMyCart.Size = New System.Drawing.Size(653, 422)
         Me.pnlMyCart.TabIndex = 9
+        '
+        'dgvCart
+        '
+        Me.dgvCart.AllowUserToAddRows = False
+        Me.dgvCart.AllowUserToDeleteRows = False
+        Me.dgvCart.AllowUserToResizeRows = False
+        Me.dgvCart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvCart.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.dgvCart.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(8, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCart.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvCart.DefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvCart.GridColor = System.Drawing.SystemColors.Control
+        Me.dgvCart.Location = New System.Drawing.Point(370, 60)
+        Me.dgvCart.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgvCart.Name = "dgvCart"
+        Me.dgvCart.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvCart.RowHeadersVisible = False
+        Me.dgvCart.RowHeadersWidth = 62
+        Me.dgvCart.RowTemplate.Height = 28
+        Me.dgvCart.Size = New System.Drawing.Size(264, 249)
+        Me.dgvCart.TabIndex = 21
         '
         'txtCardNumber
         '
         Me.txtCardNumber.BackColor = System.Drawing.Color.White
         Me.txtCardNumber.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCardNumber.ForeColor = System.Drawing.Color.Black
-        Me.txtCardNumber.Location = New System.Drawing.Point(282, 431)
+        Me.txtCardNumber.Location = New System.Drawing.Point(201, 350)
+        Me.txtCardNumber.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtCardNumber.Name = "txtCardNumber"
-        Me.txtCardNumber.Size = New System.Drawing.Size(198, 30)
+        Me.txtCardNumber.Size = New System.Drawing.Size(149, 26)
         Me.txtCardNumber.TabIndex = 20
         '
         'lblCardNumber
@@ -1379,9 +1439,10 @@ Partial Class Dashboard
         Me.lblCardNumber.AutoSize = True
         Me.lblCardNumber.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCardNumber.ForeColor = System.Drawing.Color.Black
-        Me.lblCardNumber.Location = New System.Drawing.Point(285, 407)
+        Me.lblCardNumber.Location = New System.Drawing.Point(208, 332)
+        Me.lblCardNumber.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCardNumber.Name = "lblCardNumber"
-        Me.lblCardNumber.Size = New System.Drawing.Size(102, 20)
+        Me.lblCardNumber.Size = New System.Drawing.Size(78, 15)
         Me.lblCardNumber.TabIndex = 19
         Me.lblCardNumber.Text = "Card Number"
         '
@@ -1392,9 +1453,10 @@ Partial Class Dashboard
         Me.btnCheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCheckout.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCheckout.ForeColor = System.Drawing.Color.White
-        Me.btnCheckout.Location = New System.Drawing.Point(670, 408)
+        Me.btnCheckout.Location = New System.Drawing.Point(514, 350)
+        Me.btnCheckout.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.btnCheckout.Name = "btnCheckout"
-        Me.btnCheckout.Size = New System.Drawing.Size(176, 45)
+        Me.btnCheckout.Size = New System.Drawing.Size(132, 36)
         Me.btnCheckout.TabIndex = 18
         Me.btnCheckout.Text = "Checkout"
         Me.btnCheckout.UseVisualStyleBackColor = False
@@ -1403,9 +1465,10 @@ Partial Class Dashboard
         '
         Me.cbModeOfOrder.FormattingEnabled = True
         Me.cbModeOfOrder.Items.AddRange(New Object() {"Delivery", "In Restaurant"})
-        Me.cbModeOfOrder.Location = New System.Drawing.Point(282, 105)
+        Me.cbModeOfOrder.Location = New System.Drawing.Point(201, 86)
+        Me.cbModeOfOrder.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.cbModeOfOrder.Name = "cbModeOfOrder"
-        Me.cbModeOfOrder.Size = New System.Drawing.Size(198, 24)
+        Me.cbModeOfOrder.Size = New System.Drawing.Size(149, 21)
         Me.cbModeOfOrder.TabIndex = 17
         '
         'lblModeOfOrder
@@ -1413,9 +1476,10 @@ Partial Class Dashboard
         Me.lblModeOfOrder.AutoSize = True
         Me.lblModeOfOrder.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblModeOfOrder.ForeColor = System.Drawing.Color.Black
-        Me.lblModeOfOrder.Location = New System.Drawing.Point(278, 74)
+        Me.lblModeOfOrder.Location = New System.Drawing.Point(197, 60)
+        Me.lblModeOfOrder.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblModeOfOrder.Name = "lblModeOfOrder"
-        Me.lblModeOfOrder.Size = New System.Drawing.Size(113, 20)
+        Me.lblModeOfOrder.Size = New System.Drawing.Size(87, 15)
         Me.lblModeOfOrder.TabIndex = 16
         Me.lblModeOfOrder.Text = "Mode Of Order"
         '
@@ -1424,9 +1488,10 @@ Partial Class Dashboard
         Me.lblPaymentOption.AutoSize = True
         Me.lblPaymentOption.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPaymentOption.ForeColor = System.Drawing.Color.Black
-        Me.lblPaymentOption.Location = New System.Drawing.Point(46, 399)
+        Me.lblPaymentOption.Location = New System.Drawing.Point(21, 324)
+        Me.lblPaymentOption.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblPaymentOption.Name = "lblPaymentOption"
-        Me.lblPaymentOption.Size = New System.Drawing.Size(120, 20)
+        Me.lblPaymentOption.Size = New System.Drawing.Size(94, 15)
         Me.lblPaymentOption.TabIndex = 15
         Me.lblPaymentOption.Text = "Payment Option"
         '
@@ -1435,9 +1500,10 @@ Partial Class Dashboard
         Me.cbPaymentOption.Font = New System.Drawing.Font("Segoe UI", 9.5!)
         Me.cbPaymentOption.FormattingEnabled = True
         Me.cbPaymentOption.Items.AddRange(New Object() {"Cash", "Card", "Mpesa"})
-        Me.cbPaymentOption.Location = New System.Drawing.Point(49, 432)
+        Me.cbPaymentOption.Location = New System.Drawing.Point(21, 346)
+        Me.cbPaymentOption.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.cbPaymentOption.Name = "cbPaymentOption"
-        Me.cbPaymentOption.Size = New System.Drawing.Size(212, 29)
+        Me.cbPaymentOption.Size = New System.Drawing.Size(160, 25)
         Me.cbPaymentOption.TabIndex = 14
         '
         'TextBox5
@@ -1445,9 +1511,10 @@ Partial Class Dashboard
         Me.TextBox5.BackColor = System.Drawing.Color.White
         Me.TextBox5.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox5.ForeColor = System.Drawing.Color.Black
-        Me.TextBox5.Location = New System.Drawing.Point(282, 252)
+        Me.TextBox5.Location = New System.Drawing.Point(206, 206)
+        Me.TextBox5.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(198, 30)
+        Me.TextBox5.Size = New System.Drawing.Size(149, 26)
         Me.TextBox5.TabIndex = 13
         '
         'cbCountyCart
@@ -1455,9 +1522,10 @@ Partial Class Dashboard
         Me.cbCountyCart.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbCountyCart.FormattingEnabled = True
         Me.cbCountyCart.Items.AddRange(New Object() {"Kiambu", "Nairobi", "Kisii", "Kisumu", "Murang'a", "Mombasa", "Kitui", "Nakuru"})
-        Me.cbCountyCart.Location = New System.Drawing.Point(48, 252)
+        Me.cbCountyCart.Location = New System.Drawing.Point(21, 203)
+        Me.cbCountyCart.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.cbCountyCart.Name = "cbCountyCart"
-        Me.cbCountyCart.Size = New System.Drawing.Size(211, 31)
+        Me.cbCountyCart.Size = New System.Drawing.Size(159, 27)
         Me.cbCountyCart.TabIndex = 12
         '
         'TextBox4
@@ -1465,9 +1533,10 @@ Partial Class Dashboard
         Me.TextBox4.BackColor = System.Drawing.Color.White
         Me.TextBox4.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox4.ForeColor = System.Drawing.Color.Black
-        Me.TextBox4.Location = New System.Drawing.Point(282, 349)
+        Me.TextBox4.Location = New System.Drawing.Point(201, 283)
+        Me.TextBox4.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(198, 30)
+        Me.TextBox4.Size = New System.Drawing.Size(149, 26)
         Me.TextBox4.TabIndex = 11
         '
         'TextBox3
@@ -1475,39 +1544,46 @@ Partial Class Dashboard
         Me.TextBox3.BackColor = System.Drawing.Color.White
         Me.TextBox3.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox3.ForeColor = System.Drawing.Color.Black
-        Me.TextBox3.Location = New System.Drawing.Point(50, 350)
+        Me.TextBox3.Location = New System.Drawing.Point(21, 283)
+        Me.TextBox3.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(211, 30)
+        Me.TextBox3.Size = New System.Drawing.Size(159, 26)
         Me.TextBox3.TabIndex = 10
         '
-        'TextBox2
+        'txtfirstnamecart
         '
-        Me.TextBox2.BackColor = System.Drawing.Color.White
-        Me.TextBox2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.ForeColor = System.Drawing.Color.Black
-        Me.TextBox2.Location = New System.Drawing.Point(49, 180)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(212, 30)
-        Me.TextBox2.TabIndex = 9
+        Me.txtfirstnamecart.BackColor = System.Drawing.Color.White
+        Me.txtfirstnamecart.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtfirstnamecart.ForeColor = System.Drawing.Color.Black
+        Me.txtfirstnamecart.Location = New System.Drawing.Point(21, 146)
+        Me.txtfirstnamecart.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.txtfirstnamecart.Name = "txtfirstnamecart"
+        Me.txtfirstnamecart.ReadOnly = True
+        Me.txtfirstnamecart.Size = New System.Drawing.Size(160, 26)
+        Me.txtfirstnamecart.TabIndex = 9
         '
-        'TextBox1
+        'txtlastnamecart
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.White
-        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.Black
-        Me.TextBox1.Location = New System.Drawing.Point(282, 180)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(198, 30)
-        Me.TextBox1.TabIndex = 8
+        Me.txtlastnamecart.BackColor = System.Drawing.Color.White
+        Me.txtlastnamecart.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtlastnamecart.ForeColor = System.Drawing.Color.Black
+        Me.txtlastnamecart.Location = New System.Drawing.Point(201, 146)
+        Me.txtlastnamecart.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.txtlastnamecart.Name = "txtlastnamecart"
+        Me.txtlastnamecart.ReadOnly = True
+        Me.txtlastnamecart.Size = New System.Drawing.Size(149, 26)
+        Me.txtlastnamecart.TabIndex = 8
         '
         'txtEmailCart
         '
         Me.txtEmailCart.BackColor = System.Drawing.Color.White
         Me.txtEmailCart.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEmailCart.ForeColor = System.Drawing.Color.Black
-        Me.txtEmailCart.Location = New System.Drawing.Point(49, 105)
+        Me.txtEmailCart.Location = New System.Drawing.Point(21, 85)
+        Me.txtEmailCart.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtEmailCart.Name = "txtEmailCart"
-        Me.txtEmailCart.Size = New System.Drawing.Size(212, 30)
+        Me.txtEmailCart.ReadOnly = True
+        Me.txtEmailCart.Size = New System.Drawing.Size(160, 26)
         Me.txtEmailCart.TabIndex = 7
         '
         'lblStreetAddressCart
@@ -1515,9 +1591,10 @@ Partial Class Dashboard
         Me.lblStreetAddressCart.AutoSize = True
         Me.lblStreetAddressCart.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblStreetAddressCart.ForeColor = System.Drawing.Color.Black
-        Me.lblStreetAddressCart.Location = New System.Drawing.Point(46, 317)
+        Me.lblStreetAddressCart.Location = New System.Drawing.Point(17, 257)
+        Me.lblStreetAddressCart.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblStreetAddressCart.Name = "lblStreetAddressCart"
-        Me.lblStreetAddressCart.Size = New System.Drawing.Size(107, 20)
+        Me.lblStreetAddressCart.Size = New System.Drawing.Size(83, 15)
         Me.lblStreetAddressCart.TabIndex = 6
         Me.lblStreetAddressCart.Text = "Street Address"
         '
@@ -1526,9 +1603,10 @@ Partial Class Dashboard
         Me.lblCounty.AutoSize = True
         Me.lblCounty.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCounty.ForeColor = System.Drawing.Color.Black
-        Me.lblCounty.Location = New System.Drawing.Point(46, 229)
+        Me.lblCounty.Location = New System.Drawing.Point(21, 186)
+        Me.lblCounty.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCounty.Name = "lblCounty"
-        Me.lblCounty.Size = New System.Drawing.Size(58, 20)
+        Me.lblCounty.Size = New System.Drawing.Size(45, 15)
         Me.lblCounty.TabIndex = 5
         Me.lblCounty.Text = "County"
         '
@@ -1537,9 +1615,10 @@ Partial Class Dashboard
         Me.lblCityCart.AutoSize = True
         Me.lblCityCart.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCityCart.ForeColor = System.Drawing.Color.Black
-        Me.lblCityCart.Location = New System.Drawing.Point(285, 229)
+        Me.lblCityCart.Location = New System.Drawing.Point(208, 186)
+        Me.lblCityCart.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCityCart.Name = "lblCityCart"
-        Me.lblCityCart.Size = New System.Drawing.Size(35, 20)
+        Me.lblCityCart.Size = New System.Drawing.Size(27, 15)
         Me.lblCityCart.TabIndex = 4
         Me.lblCityCart.Text = "City"
         '
@@ -1548,9 +1627,10 @@ Partial Class Dashboard
         Me.lblPhoneNumber.AutoSize = True
         Me.lblPhoneNumber.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPhoneNumber.ForeColor = System.Drawing.Color.Black
-        Me.lblPhoneNumber.Location = New System.Drawing.Point(286, 317)
+        Me.lblPhoneNumber.Location = New System.Drawing.Point(213, 257)
+        Me.lblPhoneNumber.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblPhoneNumber.Name = "lblPhoneNumber"
-        Me.lblPhoneNumber.Size = New System.Drawing.Size(114, 20)
+        Me.lblPhoneNumber.Size = New System.Drawing.Size(88, 15)
         Me.lblPhoneNumber.TabIndex = 3
         Me.lblPhoneNumber.Text = "Phone Number"
         '
@@ -1559,9 +1639,10 @@ Partial Class Dashboard
         Me.lblEmailCart.AutoSize = True
         Me.lblEmailCart.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblEmailCart.ForeColor = System.Drawing.Color.Black
-        Me.lblEmailCart.Location = New System.Drawing.Point(46, 74)
+        Me.lblEmailCart.Location = New System.Drawing.Point(17, 60)
+        Me.lblEmailCart.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblEmailCart.Name = "lblEmailCart"
-        Me.lblEmailCart.Size = New System.Drawing.Size(104, 20)
+        Me.lblEmailCart.Size = New System.Drawing.Size(81, 15)
         Me.lblEmailCart.TabIndex = 2
         Me.lblEmailCart.Text = "Email Address"
         '
@@ -1570,9 +1651,10 @@ Partial Class Dashboard
         Me.lblLastNameCart.AutoSize = True
         Me.lblLastNameCart.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLastNameCart.ForeColor = System.Drawing.Color.Black
-        Me.lblLastNameCart.Location = New System.Drawing.Point(278, 155)
+        Me.lblLastNameCart.Location = New System.Drawing.Point(203, 126)
+        Me.lblLastNameCart.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblLastNameCart.Name = "lblLastNameCart"
-        Me.lblLastNameCart.Size = New System.Drawing.Size(80, 20)
+        Me.lblLastNameCart.Size = New System.Drawing.Size(63, 15)
         Me.lblLastNameCart.TabIndex = 1
         Me.lblLastNameCart.Text = "Last Name"
         '
@@ -1581,24 +1663,42 @@ Partial Class Dashboard
         Me.lblFirstNameCart.AutoSize = True
         Me.lblFirstNameCart.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFirstNameCart.ForeColor = System.Drawing.Color.Black
-        Me.lblFirstNameCart.Location = New System.Drawing.Point(46, 155)
+        Me.lblFirstNameCart.Location = New System.Drawing.Point(21, 126)
+        Me.lblFirstNameCart.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblFirstNameCart.Name = "lblFirstNameCart"
-        Me.lblFirstNameCart.Size = New System.Drawing.Size(83, 20)
+        Me.lblFirstNameCart.Size = New System.Drawing.Size(64, 15)
         Me.lblFirstNameCart.TabIndex = 0
         Me.lblFirstNameCart.Text = "First Name"
         '
+        'tbTotal
+        '
+        Me.tbTotal.Location = New System.Drawing.Point(376, 356)
+        Me.tbTotal.Name = "tbTotal"
+        Me.tbTotal.ReadOnly = True
+        Me.tbTotal.Size = New System.Drawing.Size(100, 20)
+        Me.tbTotal.TabIndex = 22
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(373, 334)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(72, 13)
+        Me.Label1.TabIndex = 23
+        Me.Label1.Text = "Total amount "
+        '
         'Dashboard
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1188, 614)
+        Me.ClientSize = New System.Drawing.Size(867, 481)
         Me.Controls.Add(Me.pnlTopSide)
         Me.Controls.Add(Me.pnlLeftSide)
         Me.Controls.Add(Me.pnlMyCart)
         Me.Controls.Add(Me.pnlDrinks)
         Me.Controls.Add(Me.pnlFoods)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.Name = "Dashboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Dashboard"
@@ -1639,6 +1739,7 @@ Partial Class Dashboard
         Me.pnlFoods.PerformLayout()
         Me.pnlMyCart.ResumeLayout(False)
         Me.pnlMyCart.PerformLayout()
+        CType(Me.dgvCart, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1744,8 +1845,8 @@ Partial Class Dashboard
     Friend WithEvents lblStreetAddressCart As Label
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtfirstnamecart As TextBox
+    Friend WithEvents txtlastnamecart As TextBox
     Friend WithEvents txtEmailCart As TextBox
     Friend WithEvents TextBox5 As TextBox
     Friend WithEvents cbCountyCart As ComboBox
@@ -1756,4 +1857,7 @@ Partial Class Dashboard
     Friend WithEvents btnCheckout As Button
     Friend WithEvents txtCardNumber As TextBox
     Friend WithEvents lblCardNumber As Label
+    Friend WithEvents dgvCart As DataGridView
+    Friend WithEvents tbTotal As TextBox
+    Friend WithEvents Label1 As Label
 End Class

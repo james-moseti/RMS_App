@@ -4,6 +4,7 @@ Imports Microsoft.Data.SqlClient
 Public Class Dashboard
     Dim conn As SqlConnection
     Dim dbPath As String = Path.Combine(Application.StartupPath, "restaurant.mdf")
+    Dim dbdataset2 As DataTable
 
     Private Sub logoPictureBox_Click(sender As Object, e As EventArgs) Handles logoPictureBox.Click
         logoPictureBox.BorderStyle = BorderStyle.None
@@ -22,6 +23,7 @@ Public Class Dashboard
 
         lblCardNumber.Visible = False
         txtCardNumber.Visible = False
+        getuserinfo()
 
     End Sub
 
@@ -65,6 +67,11 @@ Public Class Dashboard
         pnlOnButtonDrinks.Visible = False
         pnlOnButtonCart.Visible = True
         pnlOnButtonAbout.Visible = False
+
+        loadtablecart()
+        gettotal()
+        getuserinfo()
+
     End Sub
 
     Private Sub btnAboutUs_Click(sender As Object, e As EventArgs) Handles btnAboutUs.Click
@@ -291,8 +298,9 @@ Public Class Dashboard
         End If
 
         If Integer.TryParse(txtPancake.Text, Nothing) AndAlso Integer.Parse(txtPancake.Text) > 0 Then
-            addcart(14, txtPancake.Text)
+            addcart(16, txtPancake.Text)
         End If
+        MsgBox("Added to cart successfully")
 
     End Sub
 
@@ -310,21 +318,16 @@ Public Class Dashboard
         End If
 
         If Integer.TryParse(txtChampagne.Text, Nothing) AndAlso Integer.Parse(txtChampagne.Text) > 0 Then
-            addcart(9, txtRice.Text)
+            addcart(9, txtChampagne.Text)
         End If
 
         If Integer.TryParse(txtMate.Text, Nothing) AndAlso Integer.Parse(txtMate.Text) > 0 Then
             addcart(15, txtMate.Text)
         End If
-
-        If Integer.TryParse(txtPancake.Text, Nothing) AndAlso Integer.Parse(txtPancake.Text) > 0 Then
-            addcart(16, txtPancake.Text)
-        End If
-
         If Integer.TryParse(txtBeer.Text, Nothing) AndAlso Integer.Parse(txtBeer.Text) > 0 Then
             addcart(20, txtBeer.Text)
         End If
-
+        MsgBox("Added to cart successfully")
     End Sub
 
     Private Sub AddOrder(category As String)
@@ -423,5 +426,70 @@ Public Class Dashboard
             lblCardNumber.Visible = False
             txtCardNumber.Visible = False
         End If
+    End Sub
+    Private Sub loadtablecart()
+        conn = New SqlConnection()
+        conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & dbPath & ";Integrated Security=True;Connect Timeout=30"
+        Dim da2 = New SqlDataAdapter
+        Dim bsource2 = New BindingSource
+        dbdataset2 = New DataTable
+        Try
+            conn.Open()
+            Dim query4 As String = "SELECT inventory.name, inventory.price, cart.quantity, (inventory.price * cart.quantity) AS [Total price] FROM cart JOIN inventory ON cart.itemid = inventory.itemid;"
+            Dim cmd3 = New SqlCommand(query4, conn)
+            da2.SelectCommand = cmd3
+            da2.Fill(dbdataset2)
+            bsource2.DataSource = dbdataset2
+            dgvCart.DataSource = bsource2
+            da2.Update(dbdataset2)
+            conn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conn.Dispose()
+        End Try
+    End Sub
+    Private Sub gettotal()
+        Dim reader As SqlDataReader
+        conn = New SqlConnection()
+        conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & dbPath & ";Integrated Security=True;Connect Timeout=30"
+        Try
+            conn.Open()
+            Dim query As String = "WITH joinedtable AS (SELECT inventory.name, inventory.price, cart.quantity, (inventory.price * cart.quantity) AS Total_price FROM cart JOIN inventory ON cart.itemid = inventory.itemid) SELECT SUM(Total_price) AS totalamount from joinedtable"
+            Dim cmd As New SqlCommand(query, conn)
+            reader = cmd.ExecuteReader
+            While reader.Read
+                Dim totalamount = reader("totalamount").ToString
+                tbTotal.Text = totalamount
+            End While
+            conn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conn.Dispose()
+        End Try
+    End Sub
+    Private Sub getuserinfo()
+        Dim reader As SqlDataReader
+        conn = New SqlConnection()
+        conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & dbPath & ";Integrated Security=True;Connect Timeout=30"
+        Try
+            conn.Open()
+            Dim query As String = "SELECT * FROM users WHERE userid = @userid;"
+            Dim cmd As New SqlCommand(query, conn)
+            cmd.Parameters.AddWithValue("@userid", userid)
+            reader = cmd.ExecuteReader
+            While reader.Read
+                txtEmailCart.Text = reader("email").ToString
+                txtfirstnamecart.Text = reader("first_name").ToString
+                txtlastnamecart.Text = reader("last_name").ToString
+            End While
+            conn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conn.Dispose()
+        End Try
+
     End Sub
 End Class
