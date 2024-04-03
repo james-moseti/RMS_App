@@ -6,6 +6,7 @@ Public Class Dashboard
     Dim conn As SqlConnection
     Dim dbPath As String = Path.Combine(Application.StartupPath, "restaurant.mdf")
     Dim dbdataset2 As DataTable
+    Dim itemid As String
 
     Private Sub logoPictureBox_Click(sender As Object, e As EventArgs) Handles logoPictureBox.Click
         logoPictureBox.BorderStyle = BorderStyle.None
@@ -29,7 +30,7 @@ Public Class Dashboard
         lblMpesaCode.Visible = False
         txtConfirmMpesaCode.Visible = False
         getuserinfo()
-
+        DeleteAllCartItems()
     End Sub
 
     Private Sub btnFoods_Click(sender As Object, e As EventArgs) Handles btnFoods.Click
@@ -305,8 +306,16 @@ Public Class Dashboard
         If Integer.TryParse(txtPancake.Text, Nothing) AndAlso Integer.Parse(txtPancake.Text) > 0 Then
             addcart(16, txtPancake.Text)
         End If
-        MsgBox("Added to cart successfully")
+        If txtChicken.Text <> 0 Or txtNoodles.Text <> 0 Or txtPizza.Text <> 0 Or txtRice.Text <> 0 Or txtBurger.Text <> 0 Or txtPancake.Text <> 0 Then
+            MsgBox("Added to cart successfully")
+        End If
 
+        txtChicken.Text = 0
+        txtNoodles.Text = 0
+        txtPizza.Text = 0
+        txtRice.Text = 0
+        txtBurger.Text = 0
+        txtPancake.Text = 0
     End Sub
 
     Private Sub btnAddToCartDrinks_Click(sender As Object, e As EventArgs) Handles btnAddToCartDrinks.Click
@@ -332,7 +341,17 @@ Public Class Dashboard
         If Integer.TryParse(txtBeer.Text, Nothing) AndAlso Integer.Parse(txtBeer.Text) > 0 Then
             addcart(20, txtBeer.Text)
         End If
-        MsgBox("Added to cart successfully")
+
+        If txtCola.Text <> 0 Or txtCola.Text <> 0 Or txtCoffee.Text <> 0 Or txtMilk.Text <> 0 Or txtChampagne.Text <> 0 Or txtMate.Text <> 0 Or txtBeer.Text <> 0 Then
+            MsgBox("Added to cart successfully")
+        End If
+
+        txtCola.Text = 0
+        txtCoffee.Text = 0
+        txtMilk.Text = 0
+        txtChampagne.Text = 0
+        txtMate.Text = 0
+        txtBeer.Text = 0
     End Sub
 
     Private Sub addcart(ByVal itemid As Integer, ByVal quantity As Integer)
@@ -457,7 +476,29 @@ Public Class Dashboard
     End Sub
 
     Private Sub btnDeleteOrder_Click(sender As Object, e As EventArgs) Handles btnDeleteOrder.Click
-        DeleteAllCartItems()
+        If itemid = "" Then
+            MsgBox("Please select an order to be deleted from cart")
+        Else
+            conn = New SqlConnection()
+            conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & dbPath & ";Integrated Security=True;Connect Timeout=30"
+            Try
+                conn.Open()
+                Dim query As String = "DELETE FROM cart WHERE itemid = @itemid"
+                Dim cmd As New SqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@itemid", itemid)
+                cmd.ExecuteNonQuery()
+                conn.Close()
+
+                loadtablecart()
+                gettotal()
+                itemid = ""
+                MsgBox("Order removed from cart successfully.")
+            Catch ex As Exception
+                MsgBox("Failed to delete items from cart: " & ex.Message)
+            Finally
+                conn.Dispose()
+            End Try
+        End If
     End Sub
 
     Private Sub DeleteAllCartItems()
@@ -472,7 +513,7 @@ Public Class Dashboard
 
             loadtablecart()
             gettotal()
-            MsgBox("All items removed from cart successfully.")
+            'MsgBox("All items removed from cart successfully.")
         Catch ex As Exception
             MsgBox("Failed to delete items from cart: " & ex.Message)
         Finally
@@ -585,5 +626,13 @@ Payment on Delivery"
         Finally
             conn.Close()
         End Try
+    End Sub
+
+    Private Sub dgvCart_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCart.CellClick, dgvCart.CellDoubleClick, dgvCart.CellContentDoubleClick, dgvCart.CellContentClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow
+            row = dgvCart.Rows(e.RowIndex)
+            itemid = row.Cells("itemid").Value.ToString
+        End If
     End Sub
 End Class
