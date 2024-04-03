@@ -15,7 +15,7 @@ Public Class Dashboard
         pnlFoods.Visible = True
         pnlDrinks.Visible = False
         pnlMyCart.Visible = False
-        'pnlAboutUs.Visible = False
+        pnlAboutUs.Visible = False
 
         'Orange panel to the left
         pnlOnButtonFood.Visible = True
@@ -37,7 +37,7 @@ Public Class Dashboard
         pnlFoods.Visible = True
         pnlDrinks.Visible = False
         pnlMyCart.Visible = False
-        'pnlAboutUs.Visible = False
+        pnlAboutUs.Visible = False
 
 
         'Orange panel to the left
@@ -51,7 +51,7 @@ Public Class Dashboard
         pnlFoods.Visible = False
         pnlDrinks.Visible = True
         pnlMyCart.Visible = False
-        'pnlAboutUs.Visible = False
+        pnlAboutUs.Visible = False
 
 
         'Orange panel to the left
@@ -65,7 +65,7 @@ Public Class Dashboard
         pnlFoods.Visible = False
         pnlDrinks.Visible = False
         pnlMyCart.Visible = True
-        'pnlAboutUs.Visible = False
+        pnlAboutUs.Visible = False
 
 
         'Orange panel to the left
@@ -84,7 +84,7 @@ Public Class Dashboard
         pnlFoods.Visible = False
         pnlDrinks.Visible = False
         pnlMyCart.Visible = False
-        'pnlAboutUs.Visible = True
+        pnlAboutUs.Visible = True
 
 
         'Orange panel to the left
@@ -472,6 +472,8 @@ Public Class Dashboard
             txtStreetAddressCart.Visible = True
             lblTableNumber.Visible = False
             txtTableNumber.Visible = False
+            lblPhoneNumber.Visible = True
+            txtPhoneNumber.Visible = True
         End If
     End Sub
 

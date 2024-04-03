@@ -22,6 +22,16 @@ RestaurantManagementSystem
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:RestaurantManagementSystem.My.Resources.Resources.aboutusfood">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:RestaurantManagementSystem.My.Resources.Resources.aboutusfoodimage">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:RestaurantManagementSystem.My.Resources.Resources.btnAboutUs">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -102,6 +112,11 @@ RestaurantManagementSystem
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:RestaurantManagementSystem.My.Resources.Resources.icons8_email_96">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:RestaurantManagementSystem.My.Resources.Resources.icons8_hamburger_94">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -113,6 +128,11 @@ RestaurantManagementSystem
 </summary>
 </member>
 <member name="P:RestaurantManagementSystem.My.Resources.Resources.icons8_noodles_94">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:RestaurantManagementSystem.My.Resources.Resources.icons8_office_phone_94">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
