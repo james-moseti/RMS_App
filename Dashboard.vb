@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Text.RegularExpressions
 Imports Microsoft.Data.SqlClient
 
 Public Class Dashboard
@@ -23,6 +24,10 @@ Public Class Dashboard
 
         lblCardNumber.Visible = False
         txtCardNumber.Visible = False
+        lblTableNumber.Visible = False
+        txtTableNumber.Visible = False
+        lblMpesaCode.Visible = False
+        txtConfirmMpesaCode.Visible = False
         getuserinfo()
 
     End Sub
@@ -330,75 +335,6 @@ Public Class Dashboard
         MsgBox("Added to cart successfully")
     End Sub
 
-    Private Sub AddOrder(category As String)
-        ' Open connection
-        conn = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & dbPath & ";Integrated Security=True;Connect Timeout=30")
-        conn.Open()
-
-        ' Begin a transaction
-        Dim transaction As SqlTransaction = conn.BeginTransaction()
-
-        Try
-            ' Create command to insert into orders table
-            Dim insertOrderCommand As New SqlCommand("INSERT INTO orders (userid, total_amount) VALUES (@userid, @total_amount); SELECT SCOPE_IDENTITY();", conn, transaction)
-            insertOrderCommand.Parameters.AddWithValue("@userid", 1) ' Example userid, replace with actual userid
-            ' Calculate total amount based on items in the cart
-            Dim totalAmount As Integer = CalculateTotalAmount()
-            insertOrderCommand.Parameters.AddWithValue("@total_amount", totalAmount)
-
-            ' Execute command to insert order and get the inserted order id
-            Dim orderId As Integer = Convert.ToInt32(insertOrderCommand.ExecuteScalar())
-
-            ' Create command to insert into orderitems table for each item in the cart
-            Dim insertOrderItemCommand As New SqlCommand("INSERT INTO orderitems (orderid, itemid, quantity) VALUES (@orderid, @itemid, @quantity);", conn, transaction)
-            For Each control As Control In pnlMyCart.Controls
-                If TypeOf control Is Label Then
-                    Dim label As Label = DirectCast(control, Label)
-                    Dim itemDetails() As String = label.Text.Split(":")
-                    Dim itemName As String = itemDetails(0).Trim()
-                    Dim quantity As Integer = Convert.ToInt32(itemDetails(1).Trim())
-                    ' Fetch itemid from inventory table based on item name and category (foods or drinks)
-                    Dim itemId As Integer = GetItemId(itemName, category)
-                    ' Insert order item
-                    insertOrderItemCommand.Parameters.Clear()
-                    insertOrderItemCommand.Parameters.AddWithValue("@orderid", orderId)
-                    insertOrderItemCommand.Parameters.AddWithValue("@itemid", itemId)
-                    insertOrderItemCommand.Parameters.AddWithValue("@quantity", quantity)
-                    insertOrderItemCommand.ExecuteNonQuery()
-                    ' Deduct stock from inventory
-                    DeductStock(itemId, quantity)
-                End If
-            Next
-
-            ' Commit the transaction if all operations succeed
-            transaction.Commit()
-            MessageBox.Show("Order placed successfully!")
-        Catch ex As Exception
-            ' Rollback the transaction if an exception occurs
-            transaction.Rollback()
-            MessageBox.Show("Failed to place order: " & ex.Message)
-        Finally
-            ' Close connection
-            conn.Close()
-        End Try
-    End Sub
-
-    Private Function CalculateTotalAmount() As Integer
-        ' Your logic to calculate total amount based on items in the cart
-        Return 0 ' Placeholder, replace with actual calculation
-    End Function
-
-    Private Function GetItemId(itemName As String, category As String) As Integer
-        ' Your logic to fetch itemid from inventory table based on item name and category
-        Return 0 ' Placeholder, replace with actual database query
-    End Function
-
-    Private Sub DeductStock(itemId As Integer, quantity As Integer)
-        ' Your logic to deduct stock from the inventory table
-        ' Example SQL command:
-        ' UPDATE inventory SET stock = stock - @quantity WHERE itemid = @itemid
-    End Sub
-
     Private Sub addcart(ByVal itemid As Integer, ByVal quantity As Integer)
         conn = New SqlConnection()
         conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & dbPath & ";Integrated Security=True;Connect Timeout=30"
@@ -422,6 +358,9 @@ Public Class Dashboard
         If cbPaymentOption.SelectedItem.ToString() = "Card" Then
             lblCardNumber.Visible = True
             txtCardNumber.Visible = True
+        ElseIf cbPaymentOption.SelectedItem.ToString() = "Mpesa" Then
+            lblMpesaCode.Visible = True
+            txtConfirmMpesaCode.Visible = True
         Else
             lblCardNumber.Visible = False
             txtCardNumber.Visible = False
@@ -435,7 +374,7 @@ Public Class Dashboard
         dbdataset2 = New DataTable
         Try
             conn.Open()
-            Dim query4 As String = "SELECT inventory.name, inventory.price, cart.quantity, (inventory.price * cart.quantity) AS [Total price] FROM cart JOIN inventory ON cart.itemid = inventory.itemid;"
+            Dim query4 As String = "SELECT inventory.name, inventory.itemid, inventory.price, cart.quantity, (inventory.price * cart.quantity) AS [Total price] FROM cart JOIN inventory ON cart.itemid = inventory.itemid;"
             Dim cmd3 = New SqlCommand(query4, conn)
             da2.SelectCommand = cmd3
             da2.Fill(dbdataset2)
@@ -491,5 +430,160 @@ Public Class Dashboard
             conn.Dispose()
         End Try
 
+    End Sub
+
+    Private Sub cbModeOfOrder_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbModeOfOrder.SelectedIndexChanged
+        If cbModeOfOrder.SelectedItem.ToString() = "In Restaurant" Then
+            lblCounty.Visible = False
+            cbCountyCart.Visible = False
+            lblCityCart.Visible = False
+            txtCityCart.Visible = False
+            lblStreetAddressCart.Visible = False
+            txtStreetAddressCart.Visible = False
+            lblTableNumber.Visible = True
+            txtTableNumber.Visible = True
+            lblPhoneNumber.Visible = False
+            txtPhoneNumber.Visible = False
+        Else
+            lblCounty.Visible = True
+            cbCountyCart.Visible = True
+            lblCityCart.Visible = True
+            txtCityCart.Visible = True
+            lblStreetAddressCart.Visible = True
+            txtStreetAddressCart.Visible = True
+            lblTableNumber.Visible = False
+            txtTableNumber.Visible = False
+        End If
+    End Sub
+
+    Private Sub btnDeleteOrder_Click(sender As Object, e As EventArgs) Handles btnDeleteOrder.Click
+        DeleteAllCartItems()
+    End Sub
+
+    Private Sub DeleteAllCartItems()
+        conn = New SqlConnection()
+        conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & dbPath & ";Integrated Security=True;Connect Timeout=30"
+        Try
+            conn.Open()
+            Dim query As String = "DELETE FROM cart"
+            Dim cmd As New SqlCommand(query, conn)
+            cmd.ExecuteNonQuery()
+            conn.Close()
+
+            loadtablecart()
+            gettotal()
+            MsgBox("All items removed from cart successfully.")
+        Catch ex As Exception
+            MsgBox("Failed to delete items from cart: " & ex.Message)
+        Finally
+            conn.Dispose()
+        End Try
+    End Sub
+
+    Private Function ValidateTableNumber(ByVal tableNumber As String) As Boolean
+        Dim parsedTableNumber As Integer
+        If Integer.TryParse(tableNumber, parsedTableNumber) Then
+            ' Check if table number is within the range of 1 to 100
+            If parsedTableNumber >= 1 AndAlso parsedTableNumber <= 100 Then
+                Return True
+            End If
+        End If
+        Return False
+    End Function
+
+    Private Function ValidateMpesaConfirmationCode(ByVal confirmationCode As String) As Boolean
+        ' Check if the confirmation code is exactly 10 characters
+        If confirmationCode.Length = 10 Then
+            ' Check if all characters are uppercase letters or digits
+            For Each ch As Char In confirmationCode
+                If Not Char.IsLetterOrDigit(ch) OrElse Char.IsLower(ch) Then
+                    Return False
+                End If
+            Next
+            Return True
+        End If
+        Return False
+    End Function
+
+    Private Function ValidateCardNumber(ByVal cardNumber As String) As Boolean
+        ' Check if the card number is exactly 11 digits
+        If cardNumber.Length = 11 AndAlso cardNumber.All(Function(c) Char.IsDigit(c)) Then
+            Return True
+        End If
+        Return False
+    End Function
+
+
+    Private Sub btnCheckout_Click(sender As Object, e As EventArgs) Handles btnCheckout.Click
+        ' Validating the phone number
+        If Not ValidatePhoneNumber(txtPhoneNumber.Text) Then
+            MessageBox.Show("Invalid phone number. Please enter a valid Kenyan phone number starting with +254 and followed by exactly 9 digits.", "Invalid Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        If Not ValidateTableNumber(txtTableNumber.Text) Then
+            MessageBox.Show("Table number must be a number between 1 and 100.", "Invalid Table Number", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        If cbPaymentOption.SelectedItem.ToString() = "Mpesa" AndAlso Not ValidateMpesaConfirmationCode(txtConfirmMpesaCode.Text) Then
+            MessageBox.Show("Invalid M-Pesa confirmation code. Please enter 10 uppercase letters/digits.", "Invalid M-Pesa Confirmation Code", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        If cbPaymentOption.SelectedItem.ToString() = "Card" AndAlso Not ValidateCardNumber(txtCardNumber.Text) Then
+            MessageBox.Show("Invalid card number. Please enter 11 digits.", "Invalid Card Number", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        ' Checking if delivery mode is selected
+        If cbModeOfOrder.SelectedItem.ToString() = "Delivery" Then
+            ' Checking if all necessary fields are filled
+            If String.IsNullOrEmpty(txtCityCart.Text) OrElse String.IsNullOrEmpty(txtStreetAddressCart.Text) OrElse String.IsNullOrEmpty(cbCountyCart.SelectedItem?.ToString()) Then
+                MessageBox.Show("Please fill in all delivery information.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Return
+            End If
+
+            Dim deliveryMessage As String = $"Your order will be delivered to:
+City: {txtCityCart.Text}
+Street Address: {txtStreetAddressCart.Text}
+County: {cbCountyCart.SelectedItem.ToString()}
+
+Payment on Delivery"
+            MessageBox.Show(deliveryMessage, "Delivery Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            Dim tableNumberMessage As String = $"The order for table number {txtTableNumber.Text} has been received and you will be served shortly. Enjoy your meal!"
+            MessageBox.Show(tableNumberMessage, "Pickup Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        End If
+
+        For Each row As DataGridViewRow In dgvCart.Rows
+            Dim itemid As Integer = Convert.ToInt32(row.Cells("itemid").Value)
+            Dim quantity As Integer = Convert.ToInt32(row.Cells("quantity").Value)
+            DeductItemsFromInventory(itemid, quantity)
+        Next
+    End Sub
+
+    Private Function ValidatePhoneNumber(phoneNumber As String) As Boolean
+        Dim pattern As String = "^\+254\d{9}$"
+        Dim regex As New Regex(pattern)
+        Return regex.IsMatch(phoneNumber)
+    End Function
+
+    Private Sub DeductItemsFromInventory(ByVal itemid As Integer, ByVal quantity As Integer)
+        conn = New SqlConnection()
+        conn.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & dbPath & ";Integrated Security=True;Connect Timeout=30"
+        Try
+            conn.Open()
+            Dim query As String = "UPDATE inventory SET quantity = quantity - @quantity WHERE itemid = @itemid"
+            Dim cmd As New SqlCommand(query, conn)
+            cmd.Parameters.AddWithValue("@quantity", quantity)
+            cmd.Parameters.AddWithValue("@itemid", itemid)
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            MessageBox.Show("Failed to deduct stock from inventory for item ID " & itemid & ": " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            conn.Close()
+        End Try
     End Sub
 End Class
