@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class adminPage
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class adminPage
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(adminPage))
         Me.pnlLeftSide = New System.Windows.Forms.Panel()
@@ -33,7 +33,6 @@ Partial Class adminPage
         Me.pnlTopSide = New System.Windows.Forms.Panel()
         Me.picClose = New System.Windows.Forms.PictureBox()
         Me.picMinimize = New System.Windows.Forms.PictureBox()
-        Me.picMaximize = New System.Windows.Forms.PictureBox()
         Me.tbPrice = New System.Windows.Forms.TextBox()
         Me.tbQuantity = New System.Windows.Forms.TextBox()
         Me.tbSearch = New System.Windows.Forms.TextBox()
@@ -55,8 +54,6 @@ Partial Class adminPage
         Me.dgvUsers = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnDeleteUser = New System.Windows.Forms.Button()
-        Me.btnUpdateUser = New System.Windows.Forms.Button()
-        Me.btnAddUser = New System.Windows.Forms.Button()
         Me.lblSearchByName = New System.Windows.Forms.Label()
         Me.tbSearchByNameAP = New System.Windows.Forms.TextBox()
         Me.gbAddUser = New System.Windows.Forms.GroupBox()
@@ -71,7 +68,6 @@ Partial Class adminPage
         Me.pnlTopSide.SuspendLayout()
         CType(Me.picClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picMaximize, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlInventory.SuspendLayout()
         Me.gbStockDetails.SuspendLayout()
         CType(Me.dgvInventory, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,7 +100,7 @@ Partial Class adminPage
         '
         Me.pnlOnButtonUsers.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(8, Byte), Integer))
         Me.pnlOnButtonUsers.Location = New System.Drawing.Point(0, 197)
-        Me.pnlOnButtonUsers.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnlOnButtonUsers.Margin = New System.Windows.Forms.Padding(2)
         Me.pnlOnButtonUsers.Name = "pnlOnButtonUsers"
         Me.pnlOnButtonUsers.Size = New System.Drawing.Size(8, 44)
         Me.pnlOnButtonUsers.TabIndex = 3
@@ -113,7 +109,7 @@ Partial Class adminPage
         '
         Me.pnlOnButtonInventory.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(8, Byte), Integer))
         Me.pnlOnButtonInventory.Location = New System.Drawing.Point(0, 101)
-        Me.pnlOnButtonInventory.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnlOnButtonInventory.Margin = New System.Windows.Forms.Padding(2)
         Me.pnlOnButtonInventory.Name = "pnlOnButtonInventory"
         Me.pnlOnButtonInventory.Size = New System.Drawing.Size(8, 44)
         Me.pnlOnButtonInventory.TabIndex = 10
@@ -126,7 +122,7 @@ Partial Class adminPage
         Me.btnUsers.ForeColor = System.Drawing.SystemColors.Control
         Me.btnUsers.Image = CType(resources.GetObject("btnUsers.Image"), System.Drawing.Image)
         Me.btnUsers.Location = New System.Drawing.Point(-2, 197)
-        Me.btnUsers.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnUsers.Margin = New System.Windows.Forms.Padding(2)
         Me.btnUsers.Name = "btnUsers"
         Me.btnUsers.Size = New System.Drawing.Size(214, 44)
         Me.btnUsers.TabIndex = 9
@@ -142,7 +138,7 @@ Partial Class adminPage
         Me.btnInventory.ForeColor = System.Drawing.SystemColors.Control
         Me.btnInventory.Image = CType(resources.GetObject("btnInventory.Image"), System.Drawing.Image)
         Me.btnInventory.Location = New System.Drawing.Point(-2, 101)
-        Me.btnInventory.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnInventory.Margin = New System.Windows.Forms.Padding(2)
         Me.btnInventory.Name = "btnInventory"
         Me.btnInventory.Size = New System.Drawing.Size(214, 44)
         Me.btnInventory.TabIndex = 3
@@ -179,10 +175,9 @@ Partial Class adminPage
         Me.pnlTopSide.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(8, Byte), Integer))
         Me.pnlTopSide.Controls.Add(Me.picClose)
         Me.pnlTopSide.Controls.Add(Me.picMinimize)
-        Me.pnlTopSide.Controls.Add(Me.picMaximize)
         Me.pnlTopSide.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlTopSide.Location = New System.Drawing.Point(214, 0)
-        Me.pnlTopSide.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnlTopSide.Margin = New System.Windows.Forms.Padding(2)
         Me.pnlTopSide.Name = "pnlTopSide"
         Me.pnlTopSide.Size = New System.Drawing.Size(634, 58)
         Me.pnlTopSide.TabIndex = 2
@@ -192,7 +187,7 @@ Partial Class adminPage
         Me.picClose.BackgroundImage = CType(resources.GetObject("picClose.BackgroundImage"), System.Drawing.Image)
         Me.picClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picClose.Location = New System.Drawing.Point(612, 2)
-        Me.picClose.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.picClose.Margin = New System.Windows.Forms.Padding(2)
         Me.picClose.Name = "picClose"
         Me.picClose.Size = New System.Drawing.Size(15, 16)
         Me.picClose.TabIndex = 2
@@ -202,23 +197,12 @@ Partial Class adminPage
         '
         Me.picMinimize.BackgroundImage = CType(resources.GetObject("picMinimize.BackgroundImage"), System.Drawing.Image)
         Me.picMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.picMinimize.Location = New System.Drawing.Point(573, 2)
-        Me.picMinimize.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.picMinimize.Location = New System.Drawing.Point(592, 2)
+        Me.picMinimize.Margin = New System.Windows.Forms.Padding(2)
         Me.picMinimize.Name = "picMinimize"
         Me.picMinimize.Size = New System.Drawing.Size(15, 16)
         Me.picMinimize.TabIndex = 9
         Me.picMinimize.TabStop = False
-        '
-        'picMaximize
-        '
-        Me.picMaximize.BackgroundImage = CType(resources.GetObject("picMaximize.BackgroundImage"), System.Drawing.Image)
-        Me.picMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.picMaximize.Location = New System.Drawing.Point(592, 2)
-        Me.picMaximize.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.picMaximize.Name = "picMaximize"
-        Me.picMaximize.Size = New System.Drawing.Size(15, 16)
-        Me.picMaximize.TabIndex = 10
-        Me.picMaximize.TabStop = False
         '
         'tbPrice
         '
@@ -351,9 +335,9 @@ Partial Class adminPage
         Me.gbStockDetails.Controls.Add(Me.dgvInventory)
         Me.gbStockDetails.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbStockDetails.Location = New System.Drawing.Point(5, 145)
-        Me.gbStockDetails.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbStockDetails.Margin = New System.Windows.Forms.Padding(2)
         Me.gbStockDetails.Name = "gbStockDetails"
-        Me.gbStockDetails.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbStockDetails.Padding = New System.Windows.Forms.Padding(2)
         Me.gbStockDetails.Size = New System.Drawing.Size(611, 283)
         Me.gbStockDetails.TabIndex = 17
         Me.gbStockDetails.TabStop = False
@@ -370,6 +354,7 @@ Partial Class adminPage
         Me.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvInventory.Location = New System.Drawing.Point(9, 20)
         Me.dgvInventory.Name = "dgvInventory"
+        Me.dgvInventory.ReadOnly = True
         Me.dgvInventory.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.dgvInventory.Size = New System.Drawing.Size(596, 251)
         Me.dgvInventory.TabIndex = 14
@@ -383,9 +368,9 @@ Partial Class adminPage
         Me.gbCommand.Controls.Add(Me.tbSearch)
         Me.gbCommand.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbCommand.Location = New System.Drawing.Point(302, 30)
-        Me.gbCommand.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbCommand.Margin = New System.Windows.Forms.Padding(2)
         Me.gbCommand.Name = "gbCommand"
-        Me.gbCommand.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbCommand.Padding = New System.Windows.Forms.Padding(2)
         Me.gbCommand.Size = New System.Drawing.Size(302, 106)
         Me.gbCommand.TabIndex = 16
         Me.gbCommand.TabStop = False
@@ -401,9 +386,9 @@ Partial Class adminPage
         Me.gbStockEntry.Controls.Add(Me.tbQuantity)
         Me.gbStockEntry.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbStockEntry.Location = New System.Drawing.Point(13, 15)
-        Me.gbStockEntry.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbStockEntry.Margin = New System.Windows.Forms.Padding(2)
         Me.gbStockEntry.Name = "gbStockEntry"
-        Me.gbStockEntry.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbStockEntry.Padding = New System.Windows.Forms.Padding(2)
         Me.gbStockEntry.Size = New System.Drawing.Size(208, 122)
         Me.gbStockEntry.TabIndex = 15
         Me.gbStockEntry.TabStop = False
@@ -424,9 +409,9 @@ Partial Class adminPage
         Me.gbUsersList.Controls.Add(Me.dgvUsers)
         Me.gbUsersList.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbUsersList.Location = New System.Drawing.Point(10, 133)
-        Me.gbUsersList.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbUsersList.Margin = New System.Windows.Forms.Padding(2)
         Me.gbUsersList.Name = "gbUsersList"
-        Me.gbUsersList.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbUsersList.Padding = New System.Windows.Forms.Padding(2)
         Me.gbUsersList.Size = New System.Drawing.Size(594, 301)
         Me.gbUsersList.TabIndex = 20
         Me.gbUsersList.TabStop = False
@@ -439,6 +424,7 @@ Partial Class adminPage
         Me.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvUsers.Location = New System.Drawing.Point(14, 20)
         Me.dgvUsers.Name = "dgvUsers"
+        Me.dgvUsers.ReadOnly = True
         Me.dgvUsers.RowHeadersWidth = 51
         Me.dgvUsers.Size = New System.Drawing.Size(572, 275)
         Me.dgvUsers.TabIndex = 0
@@ -446,15 +432,13 @@ Partial Class adminPage
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.btnDeleteUser)
-        Me.GroupBox2.Controls.Add(Me.btnUpdateUser)
-        Me.GroupBox2.Controls.Add(Me.btnAddUser)
         Me.GroupBox2.Controls.Add(Me.lblSearchByName)
         Me.GroupBox2.Controls.Add(Me.tbSearchByNameAP)
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(297, 22)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Size = New System.Drawing.Size(302, 106)
         Me.GroupBox2.TabIndex = 19
         Me.GroupBox2.TabStop = False
@@ -472,32 +456,6 @@ Partial Class adminPage
         Me.btnDeleteUser.TabIndex = 13
         Me.btnDeleteUser.Text = "Delete"
         Me.btnDeleteUser.UseVisualStyleBackColor = False
-        '
-        'btnUpdateUser
-        '
-        Me.btnUpdateUser.BackColor = System.Drawing.Color.Orange
-        Me.btnUpdateUser.FlatAppearance.BorderSize = 0
-        Me.btnUpdateUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUpdateUser.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdateUser.Location = New System.Drawing.Point(121, 67)
-        Me.btnUpdateUser.Name = "btnUpdateUser"
-        Me.btnUpdateUser.Size = New System.Drawing.Size(75, 23)
-        Me.btnUpdateUser.TabIndex = 12
-        Me.btnUpdateUser.Text = "Update"
-        Me.btnUpdateUser.UseVisualStyleBackColor = False
-        '
-        'btnAddUser
-        '
-        Me.btnAddUser.BackColor = System.Drawing.Color.Lime
-        Me.btnAddUser.FlatAppearance.BorderSize = 0
-        Me.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAddUser.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddUser.Location = New System.Drawing.Point(30, 67)
-        Me.btnAddUser.Name = "btnAddUser"
-        Me.btnAddUser.Size = New System.Drawing.Size(75, 23)
-        Me.btnAddUser.TabIndex = 11
-        Me.btnAddUser.Text = "Add"
-        Me.btnAddUser.UseVisualStyleBackColor = False
         '
         'lblSearchByName
         '
@@ -529,9 +487,9 @@ Partial Class adminPage
         Me.gbAddUser.Controls.Add(Me.tbUserEmailAP)
         Me.gbAddUser.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbAddUser.Location = New System.Drawing.Point(14, 6)
-        Me.gbAddUser.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbAddUser.Margin = New System.Windows.Forms.Padding(2)
         Me.gbAddUser.Name = "gbAddUser"
-        Me.gbAddUser.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbAddUser.Padding = New System.Windows.Forms.Padding(2)
         Me.gbAddUser.Size = New System.Drawing.Size(226, 122)
         Me.gbAddUser.TabIndex = 18
         Me.gbAddUser.TabStop = False
@@ -605,7 +563,7 @@ Partial Class adminPage
         Me.Controls.Add(Me.pnlInventory)
         Me.Controls.Add(Me.pnlUsers)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "adminPage"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "adminPage"
@@ -615,7 +573,6 @@ Partial Class adminPage
         Me.pnlTopSide.ResumeLayout(False)
         CType(Me.picClose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picMinimize, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picMaximize, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlInventory.ResumeLayout(False)
         Me.gbStockDetails.ResumeLayout(False)
         CType(Me.dgvInventory, System.ComponentModel.ISupportInitialize).EndInit()
@@ -640,7 +597,6 @@ Partial Class adminPage
     Friend WithEvents pnlTopSide As Panel
     Friend WithEvents picClose As PictureBox
     Friend WithEvents picMinimize As PictureBox
-    Friend WithEvents picMaximize As PictureBox
     Friend WithEvents btnInventory As Button
     Friend WithEvents btnUsers As Button
     Friend WithEvents tbPrice As TextBox
@@ -665,8 +621,6 @@ Partial Class adminPage
     Friend WithEvents gbStockDetails As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents btnDeleteUser As Button
-    Friend WithEvents btnUpdateUser As Button
-    Friend WithEvents btnAddUser As Button
     Friend WithEvents lblSearchByName As Label
     Friend WithEvents tbSearchByNameAP As TextBox
     Friend WithEvents gbAddUser As GroupBox
