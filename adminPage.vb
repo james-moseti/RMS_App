@@ -10,6 +10,7 @@ Public Class adminPage
     Dim dbdataset As DataTable
     Dim dbdataset1 As DataTable
     Dim itemid As Integer
+    Dim userid As Integer
 
     Private Sub picClose_Click(sender As Object, e As EventArgs) Handles picClose.Click
         Form1.Show()
@@ -18,14 +19,6 @@ Public Class adminPage
 
     Private Sub picMinimize_Click(sender As Object, e As EventArgs) Handles picMinimize.Click
         Me.WindowState = FormWindowState.Minimized
-    End Sub
-
-    Private Sub picMaximize_Click(sender As Object, e As EventArgs) Handles picMaximize.Click
-        If Me.WindowState = FormWindowState.Normal Then
-            Me.WindowState = FormWindowState.Maximized
-        ElseIf Me.WindowState = FormWindowState.Maximized Then
-            Me.WindowState = FormWindowState.Normal
-        End If
     End Sub
 
     Private Sub btnInventory_Click(sender As Object, e As EventArgs) Handles btnInventory.Click
@@ -168,56 +161,12 @@ Public Class adminPage
             MessageBox.Show(ex.Message)
         End Try
     End Sub
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAddUser.Click
-        conn4 = New SqlConnection()
-        conn4.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & dbPath & ";Integrated Security=True;Connect Timeout=30"
-        Try
-            conn4.Open()
-            Dim query4 As String = "INSERT INTO users (first_name, last_name, email) VALUES (@first_name, @last_name, @email);"
-            cmd4 = New SqlCommand(query4, conn4)
-            cmd4.Parameters.AddWithValue("@first_name", tbFirstNameAP.Text)
-            cmd4.Parameters.AddWithValue("@last_name", tbLastNameAP.Text)
-            cmd4.Parameters.AddWithValue("@email", tbUserEmailAP.Text)
-            cmd4.ExecuteNonQuery()
-            conn4.Close()
-            MsgBox("User added successfully")
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            conn4.Dispose()
-        End Try
-        loadtableusers()
-        resetUserFields()
-    End Sub
 
     Private Sub resetUserFields()
         tbFirstNameAP.Text = ""
         tbLastNameAP.Text = ""
         tbUserEmailAP.Text = ""
         tbSearchByNameAP.Text = ""
-    End Sub
-
-    Private Sub btnUpdateUser_Click(sender As Object, e As EventArgs) Handles btnUpdateUser.Click
-        conn4 = New SqlConnection()
-        conn4.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & dbPath & ";Integrated Security=True;Connect Timeout=30"
-        Try
-            conn4.Open()
-            Dim query4 As String = "UPDATE users SET first_name = @first_name, last_name = @last_name, email = @email WHERE userid = @userid;"
-            cmd4 = New SqlCommand(query4, conn4)
-            cmd4.Parameters.AddWithValue("@first_name", tbFirstNameAP.Text)
-            cmd4.Parameters.AddWithValue("@last_name", tbLastNameAP.Text)
-            cmd4.Parameters.AddWithValue("@email", tbUserEmailAP.Text)
-            cmd4.Parameters.AddWithValue("@userid", itemid)
-            cmd4.ExecuteNonQuery()
-            conn4.Close()
-            MsgBox("User Updated successfully")
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            conn4.Dispose()
-        End Try
-        loadtableusers()
-        resetUserFields()
     End Sub
 
     Private Sub dgvUsers_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUsers.CellContentClick, dgvUsers.CellClick
@@ -227,7 +176,7 @@ Public Class adminPage
             tbFirstNameAP.Text = row.Cells("first_name").Value.ToString
             tbLastNameAP.Text = row.Cells("last_name").Value.ToString
             tbUserEmailAP.Text = row.Cells("email").Value.ToString
-            itemid = row.Cells("userid").Value.ToString
+            userid = row.Cells("userid").Value.ToString
         End If
     End Sub
 
@@ -238,7 +187,7 @@ Public Class adminPage
             conn4.Open()
             Dim query4 As String = "DELETE FROM users WHERE userid = @userid;"
             cmd4 = New SqlCommand(query4, conn4)
-            cmd4.Parameters.AddWithValue("@userid", itemid)
+            cmd4.Parameters.AddWithValue("@userid", userid)
             cmd4.ExecuteNonQuery()
             conn4.Close()
             MsgBox("User Deleted successfully")

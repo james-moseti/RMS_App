@@ -1,4 +1,5 @@
-﻿Imports System.IO
+﻿Imports System.Diagnostics.Eventing.Reader
+Imports System.IO
 Imports System.Text.RegularExpressions
 Imports Microsoft.Data.SqlClient
 
@@ -100,14 +101,6 @@ Public Class Dashboard
 
     Private Sub picMinimize_Click(sender As Object, e As EventArgs) Handles picMinimize.Click
         Me.WindowState = WindowState.Minimized
-    End Sub
-
-    Private Sub picMaximize_Click(sender As Object, e As EventArgs) Handles picMaximize.Click
-        If Me.WindowState = WindowState.Normal Then
-            Me.WindowState = WindowState.Maximized
-        ElseIf Me.WindowState = WindowState.Maximized Then
-            Me.WindowState = WindowState.Normal
-        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCola.Click
@@ -393,7 +386,7 @@ Public Class Dashboard
         dbdataset2 = New DataTable
         Try
             conn.Open()
-            Dim query4 As String = "SELECT inventory.name, inventory.itemid, inventory.price, cart.quantity, (inventory.price * cart.quantity) AS [Total price] FROM cart JOIN inventory ON cart.itemid = inventory.itemid;"
+            Dim query4 As String = "SELECT inventory.itemid, inventory.name, inventory.price, cart.quantity, (inventory.price * cart.quantity) AS [Total price] FROM cart JOIN inventory ON cart.itemid = inventory.itemid;"
             Dim cmd3 = New SqlCommand(query4, conn)
             da2.SelectCommand = cmd3
             da2.Fill(dbdataset2)
@@ -559,47 +552,96 @@ Public Class Dashboard
 
     Private Sub btnCheckout_Click(sender As Object, e As EventArgs) Handles btnCheckout.Click
         ' Validating the phone number
-        If Not ValidatePhoneNumber(txtPhoneNumber.Text) Then
-            MessageBox.Show("Invalid phone number. Please enter a valid Kenyan phone number starting with +254 and followed by exactly 9 digits.", "Invalid Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return
-        End If
 
-        If Not ValidateTableNumber(txtTableNumber.Text) Then
-            MessageBox.Show("Table number must be a number between 1 and 100.", "Invalid Table Number", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return
-        End If
+        If cbModeOfOrder.SelectedItem = "" Then
+            MsgBox("Enter the mode of order")
+        Else
+            If cbModeOfOrder.SelectedItem = "In Restaurant" Then
+                If ValidateTableNumber(txtTableNumber.Text) Then
+                    ''MessageBox.Show("Table number must be a number between 1 and 100.", "Invalid Table Number", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
-        If cbPaymentOption.SelectedItem.ToString() = "Mpesa" AndAlso Not ValidateMpesaConfirmationCode(txtConfirmMpesaCode.Text) Then
-            MessageBox.Show("Invalid M-Pesa confirmation code. Please enter 10 uppercase letters/digits.", "Invalid M-Pesa Confirmation Code", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return
-        End If
+                    If cbPaymentOption.SelectedItem = "" Then
+                        MsgBox("Enter your preferred payment option")
+                    ElseIf cbPaymentOption.SelectedItem = "Cash" Then
+                        Dim tableNumberMessage As String = $"The order for table number {txtTableNumber.Text} has been received and you will be served shortly. Enjoy your meal!"
+                        MessageBox.Show(tableNumberMessage, "Pickup Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    ElseIf cbPaymentOption.SelectedItem = "Card" Then
+                        If ValidateCardNumber(txtCardNumber.Text) Then
+                            Dim tableNumberMessage As String = $"The order for table number {txtTableNumber.Text} has been received and you will be served shortly. Enjoy your meal!"
+                            MessageBox.Show(tableNumberMessage, "Pickup Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Else
+                            MessageBox.Show("Invalid card number. Please enter 11 digits.", "Invalid Card Number", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                            Return
+                        End If
+                    Else
+                        If ValidateMpesaConfirmationCode(txtConfirmMpesaCode.Text) Then
+                            Dim tableNumberMessage As String = $"The order for table number {txtTableNumber.Text} has been received and you will be served shortly. Enjoy your meal!"
+                            MessageBox.Show(tableNumberMessage, "Pickup Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Else
+                            MessageBox.Show("Invalid M-Pesa confirmation code. Please enter 10 uppercase letters/digits.", "Invalid M-Pesa Confirmation Code", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                            Return
+                        End If
 
-        If cbPaymentOption.SelectedItem.ToString() = "Card" AndAlso Not ValidateCardNumber(txtCardNumber.Text) Then
-            MessageBox.Show("Invalid card number. Please enter 11 digits.", "Invalid Card Number", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return
-        End If
+                    End If
+                Else
+                    MessageBox.Show("Table number must be a number between 1 and 100.", "Invalid Table Number", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
-        ' Checking if delivery mode is selected
-        If cbModeOfOrder.SelectedItem.ToString() = "Delivery" Then
-            ' Checking if all necessary fields are filled
-            If String.IsNullOrEmpty(txtCityCart.Text) OrElse String.IsNullOrEmpty(txtStreetAddressCart.Text) OrElse String.IsNullOrEmpty(cbCountyCart.SelectedItem?.ToString()) Then
-                MessageBox.Show("Please fill in all delivery information.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                Return
-            End If
+                End If
 
-            Dim deliveryMessage As String = $"Your order will be delivered to:
+            Else
+
+                If String.IsNullOrEmpty(txtCityCart.Text) OrElse String.IsNullOrEmpty(txtStreetAddressCart.Text) OrElse String.IsNullOrEmpty(cbCountyCart.SelectedItem?.ToString()) Then
+                    MessageBox.Show("Please fill in all delivery information.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    Return
+                Else
+                    If ValidatePhoneNumber(txtPhoneNumber.Text) Then
+                        If cbPaymentOption.SelectedItem = "" Then
+                            MsgBox("Enter your preferred payment option")
+                        ElseIf cbPaymentOption.SelectedItem = "Cash" Then
+                            Dim deliveryMessage As String = $"Your order will be delivered to:
 City: {txtCityCart.Text}
 Street Address: {txtStreetAddressCart.Text}
 County: {cbCountyCart.SelectedItem.ToString()}
 
 Payment on Delivery"
-            MessageBox.Show(deliveryMessage, "Delivery Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Else
-            Dim tableNumberMessage As String = $"The order for table number {txtTableNumber.Text} has been received and you will be served shortly. Enjoy your meal!"
-            MessageBox.Show(tableNumberMessage, "Pickup Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MessageBox.Show(deliveryMessage, "Delivery Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        ElseIf cbPaymentOption.SelectedItem = "Card" Then
+                            If ValidateCardNumber(txtCardNumber.Text) Then
+                                Dim deliveryMessage As String = $"Your order will be delivered to:
+City: {txtCityCart.Text}
+Street Address: {txtStreetAddressCart.Text}
+County: {cbCountyCart.SelectedItem.ToString()}
 
+Payment on Delivery"
+                                MessageBox.Show(deliveryMessage, "Delivery Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            Else
+                                MessageBox.Show("Invalid card number. Please enter 11 digits.", "Invalid Card Number", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                                Return
+                            End If
+                        Else
+                            If ValidateMpesaConfirmationCode(txtConfirmMpesaCode.Text) Then
+                                Dim deliveryMessage As String = $"Your order will be delivered to:
+City: {txtCityCart.Text}
+Street Address: {txtStreetAddressCart.Text}
+County: {cbCountyCart.SelectedItem.ToString()}
+
+Payment on Delivery"
+                                MessageBox.Show(deliveryMessage, "Delivery Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            Else
+                                MessageBox.Show("Invalid M-Pesa confirmation code. Please enter 10 uppercase letters/digits.", "Invalid M-Pesa Confirmation Code", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                                Return
+                            End If
+
+                        End If
+                    Else
+                        MessageBox.Show("Invalid phone number. Please enter a valid Kenyan phone number starting with +254 and followed by exactly 9 digits.", "Invalid Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                        Return
+                    End If
+                End If
+
+
+            End If
         End If
-
         For Each row As DataGridViewRow In dgvCart.Rows
             Dim itemid As Integer = Convert.ToInt32(row.Cells("itemid").Value)
             Dim quantity As Integer = Convert.ToInt32(row.Cells("quantity").Value)
